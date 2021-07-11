@@ -1,0 +1,26 @@
+canvas {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+}
+
+.home {
+  .top-content {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 1rem;
+    gap: 2rem;
+    .content-item {
+      flex: 1 calc((100% / 2) - 2rem);
+      max-width: 40%;
+    }
+    .text {
+      text-align: justify;
+      color: #fff;
+      font-size: 18px;
+      font-family: "Roboto Mono", sans-serif;
+    }
+  }
+}

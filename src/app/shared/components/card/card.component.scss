@@ -1,0 +1,54 @@
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  transform-style: preserve-3d;
+  perspective: 2000px;
+  flex-wrap: wrap;
+  gap: 2rem;
+  .card {
+    position: relative;
+    width: 250px;
+    overflow: hidden;
+    border: none;
+    border-radius: 15px;
+    transform-style: inherit;
+    transition: all 1s ease-in;
+    background: #00000054;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.51), inset 0 0 20px rgba(255, 255, 255, 0.51);
+    transform: rotateX(30deg) rotateY(-20deg) rotateZ(-20deg);
+    &:hover {
+      transform: rotate(0);
+    }
+    img {
+      height: 180px;
+      object-fit: cover;
+      filter: opacity(60%);
+    }
+    .text {
+      font-family: Roboto Mono, sans-serif;
+      padding: 15px 15px 0;
+      text-align: justify;
+      transform-style: inherit;
+    }
+    .side {
+      width: 50%;
+      height: 100%;
+      top: 0;
+      position: absolute;
+    }
+    .actions {
+      transform-style: inherit;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding-bottom: 1rem;
+    }
+    .right-side {
+      right: 0;
+    }
+    .left-side {
+      left: 0;
+    }
+  }
+}
