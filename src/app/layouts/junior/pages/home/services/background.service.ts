@@ -18,7 +18,7 @@ export class BackgroundService {
   private camera: PerspectiveCamera;
   private scene: Scene;
   private particlesGeometry: BufferGeometry;
-  private particleCount = 5000;
+  private particleCount = 1500;
   private particleMaterial: PointsMaterial;
   private pointLight : PointLight;
 
@@ -103,12 +103,6 @@ export class BackgroundService {
       window.addEventListener('resize', () => {
         this.resize();
       });
-
-      window.addEventListener('mousemove', (e) => {
-        this.particlesMesh.rotation.x = (e.clientY * 0.01)
-        this.particlesMesh.rotation.y = (e.clientX * 0.01)
-        this.particlesMesh.rotation.z = (e.clientX * 0.01) + (e.clientY * 0.01)
-      })
     });
   }
 

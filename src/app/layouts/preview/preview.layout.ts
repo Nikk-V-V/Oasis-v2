@@ -1,10 +1,10 @@
 import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {RenderService} from './services/render.service';
 
-
 @Component({
   templateUrl: 'preview.layout.html',
-  styleUrls: ['preview.layout.scss']
+  styleUrls: ['preview.layout.scss'],
+
 })
 export class PreviewLayout implements OnInit, OnDestroy {
 

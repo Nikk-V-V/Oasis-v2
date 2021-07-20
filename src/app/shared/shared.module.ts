@@ -6,6 +6,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { CardComponent } from './components/card/card.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import {RouterModule} from '@angular/router';
 
 
 @NgModule({
@@ -13,13 +14,14 @@ import {MatButtonModule} from '@angular/material/button';
     ToolbarComponent,
     CardComponent
   ],
-  imports: [
-    CommonModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatCardModule,
-    MatButtonModule,
-  ],
+    imports: [
+        CommonModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatCardModule,
+        MatButtonModule,
+        RouterModule,
+    ],
   providers: [],
     exports: [ToolbarComponent, CardComponent],
 })

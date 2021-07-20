@@ -1,10 +1,10 @@
 canvas {
   position: fixed;
-  z-index: -1;
   top: 0;
 }
 
 .home {
+  z-index: 1;
   .top-content {
     height: 100vh;
     display: flex;
@@ -12,15 +12,28 @@ canvas {
     justify-content: space-around;
     padding: 0 1rem;
     gap: 2rem;
+    position: relative;
     .content-item {
       flex: 1 calc((100% / 2) - 2rem);
       max-width: 40%;
+      min-width: 300px;
+      display: flex;
+      align-items: center;
     }
     .text {
       text-align: justify;
       color: #fff;
       font-size: 18px;
       font-family: "Roboto Mono", sans-serif;
+    }
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .home {
+    .top-content {
+      flex-direction: column-reverse;
     }
   }
 }

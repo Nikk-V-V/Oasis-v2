@@ -1,8 +1,15 @@
-<mat-toolbar>
-  <div class="logo">
+<mat-toolbar >
+  <div
+    (click)="back()"
+    class="logo"
+  >
     <img src="assets/images/logo.webp" alt="logo">
   </div>
-  <div class="link">
+  <div
+    *ngIf="visibility"
+    routerLink="menu"
+    class="link"
+  >
     <mat-icon>menu_open</mat-icon>
     <span>Меню</span>
   </div>

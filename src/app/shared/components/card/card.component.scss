@@ -4,7 +4,7 @@
   transform-style: preserve-3d;
   perspective: 2000px;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 4rem;
   .card {
     position: relative;
     width: 250px;
@@ -14,8 +14,10 @@
     transform-style: inherit;
     transition: all 1s ease-in;
     background: #00000054;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.51), inset 0 0 20px rgba(255, 255, 255, 0.51);
-    transform: rotateX(30deg) rotateY(-20deg) rotateZ(-20deg);
+    box-shadow: 0 0 20px 0 rgb(27 0 255 / 50%),
+    inset 0 0 0 137px rgb(3 27 101 / 36%),
+    inset 0 0 0 3px #f3eded73;
+    transform: rotateX(40deg) rotateY(30deg);
     &:hover {
       transform: rotate(0);
     }

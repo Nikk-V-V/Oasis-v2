@@ -4,7 +4,7 @@
 
 // To quickly centre a block element
 @mixin push--auto {
-  margin: { 
+  margin: {
     left: auto;
     right: auto;
   }
@@ -151,7 +151,7 @@ $z-indexes: (
   "site-footer"
 );
 
-// Simple and effective for when you need to trigger hardware acceleration for some animation,
+// Simple and effective for when you need to trigger hardware acceleration for some animations,
 // keeping everything fast, slick and flicker-free.
 @mixin hardware($backface: true, $perspective: 1000) {
   @if $backface {

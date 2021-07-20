@@ -1,2 +1,7 @@
 <app-toolbar></app-toolbar>
-<router-outlet></router-outlet>
+<div
+  id="junior-pages"
+  [@routeAnimations]="prepareRoute(outlet)"
+>
+  <router-outlet #outlet="outlet"></router-outlet>
+</div>
