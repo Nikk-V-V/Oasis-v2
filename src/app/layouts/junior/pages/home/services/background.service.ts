@@ -75,7 +75,7 @@ export class BackgroundService {
 
     this.posArray = new Float32Array(this.particleCount * 3)
     for (let i = 0; i < this.particleCount * 3; i++) {
-      this.posArray[i] = (Math.random() - 0.5) * (Math.random() * 10);
+      this.posArray[i] = (Math.random() - 0.5) * (Math.random() * 10)
     }
     this.particlesGeometry.setAttribute('position', new BufferAttribute(this.posArray, 3))
 
@@ -93,10 +93,10 @@ export class BackgroundService {
   public animate(): void {
     this.ngZone.runOutsideAngular(() => {
       if (document.readyState !== 'loading') {
-        this.render();
+        this.render()
       } else {
         window.addEventListener('DOMContentLoaded', () => {
-          this.render();
+          this.render()
         });
       }
 
@@ -107,24 +107,24 @@ export class BackgroundService {
   }
 
   public render(): void {
-    this.particlesMesh.rotation.y += 0.008
-    this.particlesMesh.rotation.x += 0.008
-    this.particlesMesh.rotation.z += 0.008
+    this.particlesMesh.rotation.y += 0.002
+    this.particlesMesh.rotation.x += 0.002
+    this.particlesMesh.rotation.z += 0.002
     this.frameId = requestAnimationFrame(() => {
       this.render();
     });
 
-    this.renderer.render(this.scene, this.camera);
+    this.renderer.render(this.scene, this.camera)
   }
 
   public resize(): void {
-    const width = window.innerWidth;
-    const height = window.innerHeight;
+    const width = window.innerWidth
+    const height = window.innerHeight
 
-    this.camera.aspect = width / height;
-    this.camera.updateProjectionMatrix();
+    this.camera.aspect = width / height
+    this.camera.updateProjectionMatrix()
 
-    this.renderer.setSize(width, height);
+    this.renderer.setSize(width, height)
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
   }
 }

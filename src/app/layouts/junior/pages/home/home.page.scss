@@ -2,11 +2,13 @@ canvas {
   position: fixed;
   top: 0;
 }
-
+main {
+  padding: 2rem;
+}
 .home {
   z-index: 1;
   .top-content {
-    height: 100vh;
+    height: 85vh;
     display: flex;
     align-items: center;
     justify-content: space-around;

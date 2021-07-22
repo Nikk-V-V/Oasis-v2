@@ -1,6 +1,6 @@
 mat-toolbar {
   background: none;
-  position: absolute;
+  position: relative;
   color: white;
   z-index: 1;
   justify-content: space-between;
@@ -14,4 +14,8 @@ mat-toolbar {
   .logo {
     cursor: pointer;
   }
+}
+
+.position-absolute {
+  position: absolute!important;
 }

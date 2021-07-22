@@ -2,9 +2,12 @@
   display: flex;
   justify-content: space-around;
   transform-style: preserve-3d;
-  perspective: 2000px;
   flex-wrap: wrap;
   gap: 4rem;
+  perspective: 2000px;
+
+  .card-content {
+  }
   .card {
     position: relative;
     width: 250px;
@@ -14,10 +17,18 @@
     transform-style: inherit;
     transition: all 1s ease-in;
     background: #00000054;
-    box-shadow: 0 0 20px 0 rgb(27 0 255 / 50%),
-    inset 0 0 0 137px rgb(3 27 101 / 36%),
-    inset 0 0 0 3px #f3eded73;
-    transform: rotateX(40deg) rotateY(30deg);
+    &:nth-child(1) {
+      transform: rotateX(40deg) rotateY(40deg);
+      box-shadow: 0 0 50px 5px rgb(146 73 212 / 50%), inset 0 0 0 137px #3b03655c, inset 0 0 0 3px #f3eded73;
+    }
+    &:nth-child(2) {
+      transform: rotateX(40deg) rotateY(0deg);
+      box-shadow: 0 0 50px 5px rgb(36 0 173 / 30%), inset 0 0 0 137px rgb(36 0 173 / 50%), inset 0 0 0 3px #f3eded73;
+    }
+    &:nth-child(3) {
+      transform: rotateX(40deg) rotateY(-40deg);
+      box-shadow: 0 0 50px 5px rgb(0 81 164 / 50%), inset 0 0 0 137px rgb(0 81 164 / 30%), inset 0 0 0 3px #f3eded73;
+    }
     &:hover {
       transform: rotate(0);
     }
