@@ -74,12 +74,12 @@ export class RenderService implements OnDestroy {
         map: texture,
         transparent: true,
       });
-      for(let p = 0; p < 150; p++) {
+      for(let p = 0; p < 140; p++) {
         let cloud = new Mesh(this.cloudGeo, this.cloudMaterial);
         cloud.position.set(
           Math.random() * 1000 - Math.random() * 850,
           Math.random() * 1000,
-          Math.random() * 1000 - Math.random() * 900
+          Math.random() * 600 - Math.random() * 600
         );
         cloud.rotation.x = 1.16;
         cloud.rotation.y = -0.12;
@@ -126,11 +126,11 @@ export class RenderService implements OnDestroy {
     if(Math.random() > 0.93 || this.flash.power > 100) {
       if(this.flash.power < 100)
         this.flash.position.set(
-          Math.random() * window.innerWidth - Math.random() * 1000,
-          600 + Math.random() * window.innerHeight,
-          Math.random() * window.innerHeight - Math.random() * 1000
+          Math.random() * window.innerWidth - Math.random() * 600,
+          window.innerHeight,
+          Math.random() * window.innerHeight - Math.random() * 600
         );
-      this.flash.power = 65 + Math.random() * 1000;
+      this.flash.power = 60 + Math.random() * 1000;
     }
 
     this.frameId = requestAnimationFrame(() => {

@@ -29,7 +29,6 @@
 }
 
 .bot-menu-buttons {
-
   bottom: -100%;
   left: -100%;
 }
@@ -62,10 +61,12 @@
   .top-menu-buttons {
     top: 10%;
     right: 10%;
+    transition-delay: .5s;
   }
 
   .bot-menu-buttons {
     bottom: 10%;
     left: 10%;
+    transition-delay: 1s;
   }
 }

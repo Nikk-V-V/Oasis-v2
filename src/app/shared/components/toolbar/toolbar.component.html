@@ -1,4 +1,6 @@
-<mat-toolbar [class.position-absolute]="!visibility">
+<mat-toolbar
+  [class.hidden]="isHidden"
+>
   <div
     (click)="back()"
     class="logo"
@@ -13,4 +15,22 @@
     <mat-icon>menu_open</mat-icon>
     <span>Меню</span>
   </div>
+
 </mat-toolbar>
+<button
+  mat-icon-button
+  class="show-hide"
+  color="accent"
+  (click)="isHidden = !isHidden"
+>
+  <mat-icon
+    *ngIf="isHidden"
+  >
+    arrow_drop_down
+  </mat-icon>
+  <mat-icon
+    *ngIf="!isHidden"
+  >
+    arrow_drop_up
+  </mat-icon>
+</button>

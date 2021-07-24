@@ -9,8 +9,9 @@ const routes: Routes = [
   {
     path: '', component: JuniorLayout, children: [
       {path: '', redirectTo: 'home', pathMatch: 'full'},
-      {path: 'home', loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule), data: {animation: 'HomePage'} },
-      {path: 'menu', loadChildren: () => import('./pages/menu/menu.module').then(m => m.MenuModule), data: {animation: 'MenuPage'}}
+      {path: 'home', loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule), data: {animation: 'HomePage'}},
+      {path: 'menu', loadChildren: () => import('./pages/menu/menu.module').then(m => m.MenuModule), data: {animation: 'MenuPage'}},
+      {path: 'gallery', loadChildren: () => import('./pages/gallery/gallery.module').then(m => m.GalleryModule), data: {animation: 'GalleryPage'}}
     ]
   },
 ];
