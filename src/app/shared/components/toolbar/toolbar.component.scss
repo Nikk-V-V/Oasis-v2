@@ -2,7 +2,7 @@ mat-toolbar {
   background: rgb(0 0 0 / 50%);
   position: fixed;
   color: white;
-  z-index: 1;
+  z-index: 20;
   overflow: hidden;
   transition: 1s ease-in-out;
   justify-content: space-between;
@@ -27,5 +27,5 @@ mat-toolbar {
   position: fixed;
   top: 0;
   right: 50%;
-  z-index: 1;
+  z-index: 21;
 }

@@ -107,3 +107,58 @@ img {
   background-color: rgb(150, 4, 254);
   cursor: pointer;
 }
+
+.banner {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  transition: 5s ease-in-out ;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .block {
+    position: relative;
+    display: block;
+    flex: 1 1 5vw;
+    height: 10vh;
+    animation: animate 2s ease-in-out forwards;
+    animation-delay: 1s;
+    opacity: 0;
+    transition: 1s ease-in;
+  }
+}
+
+.one {
+  right: 0;
+}
+
+.second {
+  left: 0;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateZ(2000px);
+    background-attachment: fixed;
+  }
+  100% {
+    transform: translateZ(0);
+    background-image: url('../assets/images/img.jpg');
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 1;
+  }
+}
+
+
+.photo-view {
+  background: rgba(0, 0, 0, 0.05);
+  mat-dialog-container {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0;
+  }
+}

@@ -19,10 +19,7 @@ export class ToolbarComponent implements OnInit {
   ngOnInit(): void {
     this.router.events.subscribe((res) => {
       const pathName = window.location.pathname
-      if (this.path === pathName) {
-        this.isHidden = true
-        console.log('Yes', this.isHidden)
-      }
+      if (this.path === pathName) this.isHidden = true
       this.path = pathName
       if (res instanceof RouterEvent) {
         res.url.split('/')[2] != 'menu' ? this.visibility = true : this.visibility = false
@@ -34,7 +31,6 @@ export class ToolbarComponent implements OnInit {
       let position = window.scrollY;
       if (position <= 39 && position !== 0) this.isHidden = false
       else if (position >= 40) this.isHidden = true
-      console.log()
     })
   }
 

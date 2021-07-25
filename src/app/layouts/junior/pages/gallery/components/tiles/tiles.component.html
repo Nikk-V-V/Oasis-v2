@@ -1,1 +1,45 @@
-<p>tiles works!</p>
+<section class="tiles">
+  <h1
+    [class.departure]="departure"
+    class="message"
+  >Спогади - це частинки тебе.</h1>
+  <div class="preview">
+    <div
+      [class.departure]="departure"
+      class="banner one"
+      #one
+    >
+      <div class="block"></div>
+    </div>
+    <div
+      [class.departure]="departure"
+      class="banner second"
+      #second
+    >
+      <div class="block"></div>
+    </div>
+  </div>
+  <div
+    [class.show]="departure"
+    class="tiles-container"
+  >
+    <div
+      *ngFor="let tile of tiles, let i = index"
+      class="tile"
+    >
+      <img [src]="tile.src" alt="tile">
+      <div
+        (click)="showPhotoWindow()"
+        *ngIf="i === tiles.length - 1"
+        class="more"
+      >
+        <mat-icon>
+          collections
+        </mat-icon>
+        <span>
+          Більше
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
