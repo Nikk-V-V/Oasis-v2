@@ -10,18 +10,20 @@ import {MatIconModule} from "@angular/material/icon";
 import { ViewPhotoComponent } from './components/view-photo/view-photo.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatButtonModule} from "@angular/material/button";
+import { VideosComponent } from './components/videos/videos.component';
 
 const routes: Routes = [
   {
     path: '', component: GalleryPage, children: [
       {path: '', redirectTo: 'tiles', pathMatch: 'full'},
-      {path: 'tiles', component: TilesComponent}
+      {path: 'accordion', component: AccordionComponent, data: {animation: 'Accordion'}},
+      {path: 'tiles', component: TilesComponent, data: {animation: 'Tiles'}},
     ]
   }
 ]
 
 @NgModule({
-  declarations: [GalleryPage, AccordionComponent, NavigateComponent, TilesComponent, ViewPhotoComponent],
+  declarations: [GalleryPage, AccordionComponent, NavigateComponent, TilesComponent, ViewPhotoComponent, VideosComponent],
     imports: [
         CommonModule,
         RouterModule.forChild(routes),

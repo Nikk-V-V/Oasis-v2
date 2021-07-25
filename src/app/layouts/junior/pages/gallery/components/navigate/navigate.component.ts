@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-navigate',
+  selector: 'navigate',
   templateUrl: './navigate.component.html',
   styleUrls: ['./navigate.component.scss']
 })
