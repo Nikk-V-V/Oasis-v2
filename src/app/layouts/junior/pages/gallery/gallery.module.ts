@@ -11,6 +11,8 @@ import { ViewPhotoComponent } from './components/view-photo/view-photo.component
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatButtonModule} from "@angular/material/button";
 import { VideosComponent } from './components/videos/videos.component';
+import { VideoStudyComponent } from './components/video-study/video-study.component';
+import {VideoTexture} from "three";
 
 const routes: Routes = [
   {
@@ -18,12 +20,14 @@ const routes: Routes = [
       {path: '', redirectTo: 'tiles', pathMatch: 'full'},
       {path: 'accordion', component: AccordionComponent, data: {animation: 'Accordion'}},
       {path: 'tiles', component: TilesComponent, data: {animation: 'Tiles'}},
+      {path: 'videos', component: VideosComponent, data: {animation: 'Videos'}},
+      {path: 'videos-study', component: VideoStudyComponent, data: {animation: 'VideoStudy'}},
     ]
   }
 ]
 
 @NgModule({
-  declarations: [GalleryPage, AccordionComponent, NavigateComponent, TilesComponent, ViewPhotoComponent, VideosComponent],
+  declarations: [GalleryPage, AccordionComponent, NavigateComponent, TilesComponent, ViewPhotoComponent, VideosComponent, VideoStudyComponent],
     imports: [
         CommonModule,
         RouterModule.forChild(routes),

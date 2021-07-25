@@ -1,7 +1,7 @@
 .navigate {
   position: fixed;
-  right: 0;
-  top: 50%;
+  top: 20%;
+  left: 0;
   z-index: 100;
   .menu-item {
     display: flex;
@@ -11,15 +11,13 @@
     overflow: hidden;
     transition: 1s ease-in;
     cursor: pointer;
-    transform: translateX(80px);
-    clip-path: polygon(43% 0%, 43% 100%, 0% 100%, 0% 0%);
-    border-radius: 1rem 0 0 1rem;
+    clip-path: polygon(35% 0%, 35% 100%, 0% 100%, 0% 0%);
+    border-radius: 0 1rem 1rem 0;
     span {
       font-weight: bold;
     }
     &:hover {
       background: rgb(0 0 0 / 60%);
-      transform: translateX(0px);
       clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
     }
   }
