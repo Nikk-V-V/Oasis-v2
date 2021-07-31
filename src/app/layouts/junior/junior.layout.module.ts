@@ -11,7 +11,8 @@ const routes: Routes = [
       {path: '', redirectTo: 'home', pathMatch: 'full'},
       {path: 'home', loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule), data: {animation: 'HomePage'}},
       {path: 'menu', loadChildren: () => import('./pages/menu/menu.module').then(m => m.MenuModule), data: {animation: 'MenuPage'}},
-      {path: 'gallery', loadChildren: () => import('./pages/gallery/gallery.module').then(m => m.GalleryModule), data: {animation: 'GalleryPage'}}
+      {path: 'gallery', loadChildren: () => import('./pages/gallery/gallery.module').then(m => m.GalleryModule), data: {animation: 'GalleryPage'}},
+      {path: 'event/:id', loadChildren: () => import('./pages/event/event.module').then(m => m.EventModule), data: {animation: 'EventPage'}}
     ]
   },
 ];

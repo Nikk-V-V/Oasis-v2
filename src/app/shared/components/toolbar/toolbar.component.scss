@@ -1,7 +1,8 @@
 mat-toolbar {
-  background: rgb(0 0 0 / 50%);
+  background: rgb(0 0 0 / 30%);
   position: fixed;
   color: white;
+  top: 0;
   z-index: 20;
   overflow: hidden;
   transition: 1s ease-in-out;

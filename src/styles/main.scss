@@ -77,15 +77,17 @@ img {
   align-items: center;
   position: relative;
   text-align: center;
-  font-family: "Roboto Mono", sans-serif!important;
-  height: 80px;
-  font-size: 7vw !important;
-  margin: 3rem 0!important;
-  background: linear-gradient(45deg, #ff00c8 25%, #00b8ff 65%, #011354);;
+  font-family: "Roboto Mono", sans-serif !important;
+  height: auto;
+  font-size: 3rem !important;
+  font-weight: bold !important;
+  margin: 3rem 0 !important;
+  line-height: normal!important;
+  background: linear-gradient(45deg, #ff00c8 25%, #00b8ff 65%, #011354);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-transform: uppercase;
-  text-shadow: -3px 3px 7px #0014ff7d;
+  text-shadow: 0 0 5px rgb(0 20 255 / 20%), -3px 3px 5px rgb(0 20 255 / 20%), -6px 6px 5px rgb(0 20 255 / 20%), -9px 9px 5px rgb(0 20 255 / 20%);
 }
 
 
@@ -121,7 +123,7 @@ img {
   .block {
     position: relative;
     display: block;
-    flex: 1 1 5vw;
+    flex: 1 1 10vw;
     height: 10vh;
     animation: animate 2s ease-in-out forwards;
     animation-delay: 1s;

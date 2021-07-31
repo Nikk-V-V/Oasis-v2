@@ -19,15 +19,17 @@
     background: #00000054;
     &:nth-child(1) {
       transform: rotateX(40deg) rotateY(40deg);
-      box-shadow: 0 0 50px 5px rgb(146 73 212 / 50%), inset 0 0 0 137px #3b03655c, inset 0 0 0 3px #f3eded73;
+      box-shadow: 0 0 50px 5px rgb(146 73 212 / 60%),
+      inset 0 0 0 137px rgba(59, 3, 101, 0.8),
+      inset 0 0 0 3px #f3eded73;
     }
     &:nth-child(2) {
       transform: rotateX(40deg) rotateY(0deg);
-      box-shadow: 0 0 50px 5px rgb(36 0 173 / 30%), inset 0 0 0 137px rgb(36 0 173 / 50%), inset 0 0 0 3px #f3eded73;
+      box-shadow: 0 0 50px 5px rgb(36 0 173 / 60%), inset 0 0 0 137px rgb(36 0 173 / 80%), inset 0 0 0 3px #f3eded73;
     }
     &:nth-child(3) {
       transform: rotateX(40deg) rotateY(-40deg);
-      box-shadow: 0 0 50px 5px rgb(0 81 164 / 50%), inset 0 0 0 137px rgb(0 81 164 / 30%), inset 0 0 0 3px #f3eded73;
+      box-shadow: 0 0 50px 5px rgb(0 81 164 / 60%), inset 0 0 0 137px rgb(0 81 164 / 80%), inset 0 0 0 3px #f3eded73;
     }
     &:hover {
       transform: rotate(0);
@@ -56,6 +58,12 @@
       justify-content: center;
       gap: 2rem;
       padding-bottom: 1rem;
+      button {
+        border: 2px solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
     }
     .right-side {
       right: 0;
