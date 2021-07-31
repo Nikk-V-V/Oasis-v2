@@ -1,6 +1,6 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
-import {ViewPhotoComponent} from "../view-photo/view-photo.component";
+import {ViewPhotoComponent} from "../components/view-photo/view-photo.component";
 
 @Component({
   selector: 'tiles',

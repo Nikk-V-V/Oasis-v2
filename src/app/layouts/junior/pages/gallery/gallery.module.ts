@@ -3,15 +3,15 @@ import { CommonModule } from '@angular/common';
 import {GalleryPage} from './gallery.page';
 import {RouterModule, Routes} from '@angular/router';
 import {SharedModule} from '../../../../shared/shared.module';
-import { AccordionComponent } from './components/accordion/accordion.component';
+import { AccordionComponent } from './accordion/accordion.component';
 import { NavigateComponent } from './components/navigate/navigate.component';
-import { TilesComponent } from './components/tiles/tiles.component';
+import { TilesComponent } from './tiles/tiles.component';
 import {MatIconModule} from "@angular/material/icon";
 import { ViewPhotoComponent } from './components/view-photo/view-photo.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatButtonModule} from "@angular/material/button";
-import { VideosComponent } from './components/videos/videos.component';
-import { VideoStudyComponent } from './components/video-study/video-study.component';
+import { VideosComponent } from './videos/videos.component';
+import { VideoStudyComponent } from './video-study/video-study.component';
 import {VideoTexture} from "three";
 
 const routes: Routes = [
