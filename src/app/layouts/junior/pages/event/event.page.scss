@@ -27,7 +27,7 @@
       text-transform: uppercase;
       font-weight: 800;
       color: rgba(255, 255, 255, 0.5);
-      text-shadow: -3px 0px 5px rgb(0 67 255 / 50%), -4px 2px 5px rgb(0 67 255 / 50%), -5px 5px 5px rgb(0 67 255 / 50%), -6px 7px 5px rgb(0 67 255 / 50%);
+      text-shadow: 1px 1px 5px rgb(0 67 255 / 50%), 2px 2px 5px rgb(0 67 255 / 50%), 3px 3px 5px rgb(0 67 255 / 50%), 4px 4px 5px rgb(0 67 255 / 50%);
       font-stretch: normal;
       line-height: normal;
       letter-spacing: .5rem;
@@ -57,14 +57,14 @@
     border-radius: 5px;
     border: none;
     background: none;
-    color: #0008ff;
-    box-shadow: 0 0 10px 0 #0005b9, 0 0 10px 0 #b500e0, inset 5px 5px 5px 0 #000486, inset -5px -5px 5px 0px #8e00af;
+    color: #b500e0;
+    box-shadow: 0 0 20px 0 rgba(0, 5, 185, 0.50), 0 0 20px 0 rgba(181, 0, 224, 0.5), inset 5px 5px 5px 0 #000486, inset -5px -5px 5px 0px #8e00af;
     transition: all .5s ease-in;
     font-weight: bold;
     font-style: normal;
     &:hover {
-      color: #b500e0;
-      box-shadow: 0 0 5px 0 #0005b9, 0 0 5px 0 #b500e0, inset 5px 5px 10px 0 #0005b9, inset -5px -5px 10px 0px #b500e0;
+      color: #080fe5;
+      box-shadow: 0 0 10px 0 rgba(0, 5, 185, 0.50), 0 0 10px 0 rgba(181, 0, 224, 0.5), inset 5px 5px 10px 0 #0005b9, inset -5px -5px 10px 0px #b500e0;
     }
   }
   &:after {

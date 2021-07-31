@@ -1,0 +1,34 @@
+.contacts {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "Roboto Mono", sans-serif;
+  .contact {
+    max-width: 400px;
+    box-shadow: -5px -5px 10px 5px rgb(1 8 51), 5px 5px 5px rgb(15 17 28);
+    border-radius: 10px;
+    &__title {
+      padding: 10px 1rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    &__sub__title {
+      padding: 10px 1rem;
+      font-size: .8rem;
+      font-weight: normal;
+    }
+    &__img {
+      width: 100%;
+      min-height: 300px;
+      max-height: 450px;
+    }
+    &__social {
+      display: flex;
+      justify-content: space-around;
+      padding: 1rem;
+    }
+  }
+}
