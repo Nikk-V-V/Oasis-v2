@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {BackgroundService} from './services/background.service';
 
 
@@ -6,7 +6,7 @@ import {BackgroundService} from './services/background.service';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss']
 })
-export class HomePage implements  OnInit{
+export class HomePage implements  OnInit, OnDestroy{
 
   @ViewChild('oasis', {static: true})
   public oasis: ElementRef<HTMLCanvasElement>;
@@ -17,5 +17,8 @@ export class HomePage implements  OnInit{
   ngOnInit(): void {
     this.topContent.createScene(this.oasis);
     this.topContent.animate();
+  }
+
+  ngOnDestroy() {
   }
 }

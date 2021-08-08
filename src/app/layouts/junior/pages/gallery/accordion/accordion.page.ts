@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'accordion',
-  templateUrl: './accordion.component.html',
-  styleUrls: ['./accordion.component.scss']
+  templateUrl: './accordion.page.html',
+  styleUrls: ['./accordion.page.scss']
 })
-export class AccordionComponent implements OnInit {
+export class AccordionPage implements OnInit {
 
   items = [
     {

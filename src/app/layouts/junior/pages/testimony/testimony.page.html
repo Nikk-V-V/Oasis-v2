@@ -1,0 +1,46 @@
+<section
+  class="testimony"
+>
+  <button
+    class="right"
+    mat-icon-button
+    (click)="swap('right')"
+  >
+    <mat-icon>navigate_next</mat-icon>
+  </button>
+  <div id="box">
+
+    <span style="--i:1">
+      <iframe
+        type="text/html"
+        src="https://www.youtube.com/embed/n6VcLEq3_lk"
+        frameborder="0" allowfullscreen
+      >
+      </iframe>
+    </span>
+    <span style="--i:2">
+      <iframe
+        type="text/html"
+        src="https://www.youtube.com/embed/qoOKiimRl7M"
+        frameborder="0" allowfullscreen
+      >
+      </iframe>
+    </span>
+    <span style="--i:3">
+      <iframe
+        type="text/html"
+        src="https://www.youtube.com/embed/mgAUcttbb-8"
+        frameborder="0" allowfullscreen
+      >
+      </iframe>
+    </span>
+
+  </div>
+  <button
+    class="left"
+    mat-icon-button
+    (click)="swap('left')"
+  >
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+</section>

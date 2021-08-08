@@ -15,6 +15,7 @@ const routes: Routes = [
       {path: 'event/:id', loadChildren: () => import('./pages/event/event.module').then(m => m.EventModule), data: {animation: 'EventPage'}},
       {path: 'contacts', loadChildren: () => import('./pages/contacts/contacts.module').then(m => m.ContactsModule), data: {animation: 'ContactsPage'}},
       {path: 'about', loadChildren: () => import('./pages/about-as/about-as.module').then(m => m.AboutAsModule), data: {animation: 'AboutAsPage'}},
+      {path: 'testimony', loadChildren: () => import('./pages/testimony/testimony.module').then(m => m.TestimonyModule), data: {animation: 'TestimonyPage'}},
     ]
   },
 ];

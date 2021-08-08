@@ -4,10 +4,10 @@ import {ViewPhotoComponent} from "../components/view-photo/view-photo.component"
 
 @Component({
   selector: 'tiles',
-  templateUrl: './tiles.component.html',
-  styleUrls: ['./tiles.component.scss']
+  templateUrl: './tiles.page.html',
+  styleUrls: ['./tiles.page.scss']
 })
-export class TilesComponent implements OnInit {
+export class TilesPage implements OnInit {
 
   @ViewChild('one', {static: true})
   public one: ElementRef<HTMLDivElement>;
