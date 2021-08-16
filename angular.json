@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-three-template": {
+    "oasis": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/dev",
+            "outputPath": "dist/oasis/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -79,18 +79,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ng-three-template:build"
+            "browserTarget": "oasis:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ng-three-template:build:production"
+              "browserTarget": "oasis:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-three-template:build"
+            "browserTarget": "oasis:build"
           }
         },
         "test": {
@@ -123,10 +123,74 @@
               "**/node_modules/**"
             ]
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/oasis/server",
+            "main": "server.ts",
+            "tsConfig": "src/tsconfig.server.json",
+            "optimization": false,
+            "sourceMap": true,
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles"
+              ]
+            },
+            "extractLicenses": false
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "sourceMap": false,
+              "extractLicenses": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "oasis:build:development",
+              "serverTarget": "oasis:server:development"
+            },
+            "production": {
+              "browserTarget": "oasis:build:production",
+              "serverTarget": "oasis:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "oasis:build:production",
+              "serverTarget": "oasis:server:production"
+            },
+            "development": {
+              "browserTarget": "oasis:build:development",
+              "serverTarget": "oasis:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     },
-    "ng-three-template-e2e": {
+    "oasis-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -135,7 +199,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "ng-three-template:serve"
+            "devServerTarget": "oasis:serve"
           },
           "configurations": {
             "production": {
@@ -155,7 +219,7 @@
       }
     }
   },
-  "defaultProject": "ng-three-template",
+  "defaultProject": "oasis",
   "cli": {
     "analytics": "58212eb1-d08c-4e42-a8dd-b0fc0d26b8d1"
   }
