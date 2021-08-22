@@ -1,19 +1,26 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
+import {GoToComponent} from "./go-to/go-to.component";
 
 @Component({
   templateUrl: 'event.page.html',
   styleUrls: ['event.page.scss']
 })
-export class EventPage implements  OnInit, OnDestroy{
+export class EventPage implements  OnInit{
 
 
-  constructor() {
+  constructor(
+    private dialog: MatDialog
+  ) {
   }
 
   ngOnInit(): void {
 
   }
 
-  ngOnDestroy() {
+  goTo(): void {
+    this.dialog.open(GoToComponent, {
+
+    })
   }
 }

@@ -1,0 +1,22 @@
+<mat-dialog-content>
+    <form [formGroup]="form">
+      <div class="full-name">
+        <label>
+          <input
+            formControlName="name"
+            type="text"
+            placeholder="Ім'я"
+          >
+        </label>
+        <label>
+          <input
+            formControlName="surname"
+            type="text"
+            placeholder="Прізвище"
+          >
+        </label>
+      </div>
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions></mat-dialog-actions>
