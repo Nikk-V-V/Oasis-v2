@@ -20,7 +20,7 @@ export class EventPage implements  OnInit{
 
   goTo(): void {
     this.dialog.open(GoToComponent, {
-
+      panelClass: 'reg-to-event'
     })
   }
 }

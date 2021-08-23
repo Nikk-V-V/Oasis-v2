@@ -1,6 +1,7 @@
 <mat-dialog-content>
     <form [formGroup]="form">
       <div class="full-name">
+        <div class="title">Ім'я та прізвище</div>
         <label>
           <input
             formControlName="name"
@@ -16,6 +17,50 @@
           >
         </label>
       </div>
+      <div class="age input-cont">
+        <div class="title">Оберіть дату народження</div>
+        <mat-form-field>
+          <input
+            (dateChange)="calculateAge()"
+            matInput
+            autocomplete="off"
+            formControl="birthday"
+            [matDatepicker]="picker"
+            placeholder="Нажміть на іконку"
+          >
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="city input-cont">
+        <div class="title">Введіть ваше місто</div>
+        <input
+          type="text"
+          formControl="city"
+        >
+      </div>
+      <div class="sex input-cont">
+        <div class="title">Стать</div>
+        <mat-form-field
+          color="primary"
+          appearance="outline"
+        >
+          <mat-label>Ти?</mat-label>
+          <mat-select formControlName="sex">
+            <mat-option value="Хлопець">Хлопець</mat-option>
+            <mat-option value="Дівчина">Дівчина</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="phone"></div>
+      <div class="itWasChild"></div>
+      <div class="itWasJun"></div>
+      <div class="i-belong"></div>
+      <div class="email"></div>
+      <div class="notes"></div>
     </form>
 </mat-dialog-content>
 

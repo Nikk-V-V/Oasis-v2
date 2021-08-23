@@ -7,6 +7,13 @@ import {MatButtonModule} from "@angular/material/button";
 import { GoToComponent } from './go-to/go-to.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {ReactiveFormsModule} from "@angular/forms";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule, MAT_DATE_LOCALE} from "@angular/material/core";
+import {MatIconModule} from "@angular/material/icon";
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import {MatSelectModule} from "@angular/material/select";
 
 const routes: Routes = [{path: '', component: EventPage}]
 
@@ -18,7 +25,17 @@ const routes: Routes = [{path: '', component: EventPage}]
     SharedModule,
     MatButtonModule,
     MatDialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatIconModule,
+    MatAutocompleteModule,
+    MatSelectModule
+  ],
+  providers: [
+    {provide: MAT_DATE_LOCALE, useValue: 'uk-UA'},
   ]
 })
 export class EventModule { }

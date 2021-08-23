@@ -1,0 +1,62 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-cont {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.full-name {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.title {
+  width: 100%;
+  color: #d000ff;
+  text-align: center;
+}
+
+.age {
+  mat-form-field {
+    display: flex;
+    justify-content: center;
+    .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+      padding: 0;
+    }
+    mat-datepicker-toggle {
+      color: #8e00af;
+      position: absolute;
+      font-size: 2rem;
+      top: -44px;
+      right: 7px;
+    }
+  }
+  input {
+    height: 20px;
+  }
+}
+
+input {
+  width: 150px;
+  height: 40px;
+  padding: 10px 15px;
+  border-radius: 13px;
+  border: 0;
+  color: #b900ff;
+  background: none;
+  box-shadow: 3px 3px 10px 0 #000000, -3px -3px 10px 0px #570576, inset 5px 5px 10px 5px #000000d6, inset 0px 0px 5px 5px #52036b;
+  font-size: 14px;
+  font-weight: 700;
+  &::placeholder {
+    color: #512D84;
+  }
+}
+
