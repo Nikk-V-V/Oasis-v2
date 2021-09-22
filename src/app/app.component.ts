@@ -7,6 +7,5 @@ import {UploadVersionService} from "./shared/services/upload-version.service";
 })
 export class AppComponent {
 
-  constructor(private uploadVersionService: UploadVersionService) {
-  }
+  constructor(private uploadVersionService: UploadVersionService) {}
 }
