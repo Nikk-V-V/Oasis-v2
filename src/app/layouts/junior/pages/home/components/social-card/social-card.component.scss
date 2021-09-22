@@ -1,0 +1,29 @@
+
+.cards__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1rem;
+  .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    padding: 1rem;
+    border-radius: 20%;
+    cursor: pointer;
+    img {
+      width: 65px;
+    }
+    &:nth-child(1) {
+      box-shadow: 0 0 50px 5px rgb(212 73 180 / 60%), inset 0 0 0 137px rgb(81 3 101 / 80%), inset 0 0 0 3px #f3eded73;
+    }
+    &:nth-child(2) {
+      box-shadow: 0 0 50px 5px rgb(36 0 173 / 60%), inset 0 0 0 137px rgb(36 0 173 / 80%), inset 0 0 0 3px #f3eded73;
+    }
+    &:nth-child(3) {
+      box-shadow: 0 0 50px 5px rgb(164 0 0 / 60%), inset 0 0 0 137px rgb(164 0 0 / 80%), inset 0 0 0 3px #f3eded73;
+    }
+  }
+}

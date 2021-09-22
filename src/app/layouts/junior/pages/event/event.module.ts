@@ -14,26 +14,32 @@ import {MatNativeDateModule, MAT_DATE_LOCALE} from "@angular/material/core";
 import {MatIconModule} from "@angular/material/icon";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import {MatSelectModule} from "@angular/material/select";
+import {MatListModule} from "@angular/material/list";
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+import {MatRadioModule} from "@angular/material/radio";
 
 const routes: Routes = [{path: '', component: EventPage}]
 
 @NgModule({
   declarations: [EventPage, GoToComponent],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    SharedModule,
-    MatButtonModule,
-    MatDialogModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatIconModule,
-    MatAutocompleteModule,
-    MatSelectModule
-  ],
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes),
+        SharedModule,
+        MatButtonModule,
+        MatDialogModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatIconModule,
+        MatAutocompleteModule,
+        MatSelectModule,
+        MatListModule,
+        MatSlideToggleModule,
+        MatRadioModule
+    ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'uk-UA'},
   ]

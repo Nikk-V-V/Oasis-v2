@@ -10,7 +10,6 @@
   }
   .card {
     position: relative;
-
     width: 250px;
     overflow: hidden;
     border: none;
@@ -73,5 +72,11 @@
     .left-side {
       left: 0;
     }
+  }
+}
+
+@media (max-width: 1024px) {
+  .card {
+    transform: rotate(0)!important;
   }
 }

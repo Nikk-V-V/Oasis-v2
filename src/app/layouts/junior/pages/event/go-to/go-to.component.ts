@@ -33,7 +33,7 @@ export class GoToComponent implements OnInit {
       isTelegram: new FormControl(false),
       isViber: new FormControl(false),
       isWhatsApp: new FormControl(false),
-      parentsPhone: new FormControl(null, [Validators.required, Validators.pattern(/^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/)]),
+      parentPhone: new FormControl(null, [Validators.required, Validators.pattern(/^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/)]),
       itWasJun: new FormControl(false, [Validators.required]),
       itWasChild: new FormControl(false, [Validators.required]),
       iBelong: new FormControl('', [Validators.required]),

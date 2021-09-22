@@ -39,7 +39,7 @@
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      color: #b87fe2;
+      color: #fff;
       margin: 3rem 0;
       box-shadow: -5px -5px 10px 0px #0074ff80, 5px 5px 10px 0px #cc00ff82, inset 5px 5px 10px 0px #0057c1, inset -5px -5px 10px 0px #b500e0;
       padding: 2rem;
@@ -47,12 +47,6 @@
       font: 800 normal 16px / 32px Roboto;
       text-indent: 1.5em;
       text-align: justify;
-      p {
-        transition: all .5s ease;
-        &:hover {
-          color: rgb(3 72 164);
-        }
-      }
       .document {
         display: flex;
         justify-content: center;
@@ -98,7 +92,7 @@
     }
     .text {
       .texts {
-        padding: 1rem;
+        padding: 1.5rem;
       }
     }
   }

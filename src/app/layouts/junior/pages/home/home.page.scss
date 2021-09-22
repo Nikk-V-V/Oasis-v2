@@ -1,6 +1,7 @@
 canvas {
   position: fixed;
   top: 0;
+  z-index: -1;
 }
 main {
   padding: 2rem;
@@ -11,6 +12,7 @@ main {
   .top-content {
     height: 560px;
     display: flex;
+    margin-top: 6rem;
     align-items: center;
     justify-content: space-around;
     padding: 0 1rem;
@@ -46,6 +48,11 @@ main {
   -webkit-text-fill-color: transparent;
   text-transform: uppercase;
   text-shadow: 0 0 5px rgb(0 20 255 / 20%), -3px 3px 5px rgb(0 20 255 / 20%), -6px 6px 5px rgb(0 20 255 / 20%), -9px 9px 5px rgb(0 20 255 / 20%);
+}
+
+section {
+  position: relative;
+  z-index: 1;
 }
 
 

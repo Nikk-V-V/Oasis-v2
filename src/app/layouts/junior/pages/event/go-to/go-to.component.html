@@ -1,32 +1,40 @@
 <mat-dialog-content>
     <form [formGroup]="form">
-      <div class="full-name">
-        <div class="title">Ім'я та прізвище</div>
-        <label>
+      <div class="full-name two-input">
+        <mat-form-field
+          appearance="fill"
+        >
+          <mat-label>Ім'я</mat-label>
           <input
+            type="text"
             formControlName="name"
-            type="text"
-            placeholder="Ім'я"
+            matInput
+            required
           >
-        </label>
-        <label>
+        </mat-form-field>
+        <mat-form-field
+          appearance="fill"
+        >
+          <mat-label>Прізвище</mat-label>
           <input
-            formControlName="surname"
             type="text"
-            placeholder="Прізвище"
+            formControlName="surname"
+            matInput
+            required
           >
-        </label>
+        </mat-form-field>
       </div>
       <div class="age input-cont">
-        <div class="title">Оберіть дату народження</div>
-        <mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Дата народження</mat-label>
           <input
+            required
             (dateChange)="calculateAge()"
             matInput
             autocomplete="off"
             formControl="birthday"
             [matDatepicker]="picker"
-            placeholder="Нажміть на іконку"
+            (focus)="picker.open()"
           >
           <mat-datepicker-toggle
             matSuffix
@@ -36,32 +44,118 @@
         </mat-form-field>
       </div>
       <div class="city input-cont">
-        <div class="title">Введіть ваше місто</div>
-        <input
-          type="text"
-          formControl="city"
-        >
+        <mat-form-field appearance="fill">
+          <mat-label>Місто</mat-label>
+          <input
+            required
+            type="text"
+            matInput
+            formControlName="city"
+          >
+        </mat-form-field>
+
       </div>
       <div class="sex input-cont">
-        <div class="title">Стать</div>
-        <mat-form-field
-          color="primary"
-          appearance="outline"
-        >
+        <mat-form-field appearance="fill">
           <mat-label>Ти?</mat-label>
-          <mat-select formControlName="sex">
+          <mat-select
+            required
+            formControlName="sex"
+          >
             <mat-option value="Хлопець">Хлопець</mat-option>
             <mat-option value="Дівчина">Дівчина</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
-      <div class="phone"></div>
-      <div class="itWasChild"></div>
-      <div class="itWasJun"></div>
-      <div class="i-belong"></div>
-      <div class="email"></div>
-      <div class="notes"></div>
+      <div class="phone two-input">
+        <mat-form-field appearance="fill">
+          <mat-label>Телефон учасника</mat-label>
+          <input
+            required
+            matInput
+            type="tel"
+            formControlName="phone"
+          >
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Телефон батьків</mat-label>
+          <input
+            required
+            matInput
+            type="tel"
+            formControlName="parentPhone"
+          >
+        </mat-form-field>
+      </div>
+      <mat-list>
+        <mat-list-item>
+          <mat-slide-toggle formControlName="isTelegram">
+            <img src="assets/images/telegram.svg" alt="Telegram">
+          </mat-slide-toggle>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-slide-toggle formControlName="isViber">
+            <img src="assets/images/viber.svg" alt="Telegram">
+          </mat-slide-toggle>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-slide-toggle formControlName="isWhatsApp">
+            <img src="assets/images/whatsapp.svg" alt="Telegram">
+          </mat-slide-toggle>
+        </mat-list-item>
+      </mat-list>
+      <div class="itWas two-input">
+        <div class="itWasChild">
+          <mat-label>Бував(ла) на дитячому Оазисі?</mat-label>
+          <mat-radio-group formControlName="itWasChild" class="radios" aria-label="Обери варіант">
+            <mat-radio-button value="true">Так, бував(ла)</mat-radio-button>
+            <mat-radio-button value="false">Ні, не бував(ла)</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div class="itWasJun">
+          <mat-label>Бував(ла) на молодіжному Оазисі?</mat-label>
+          <mat-radio-group formControlName="itWasJun" class="radios" aria-label="Обери варіант">
+            <mat-radio-button value="true">Так, бував(ла)</mat-radio-button>
+            <mat-radio-button value="false">Ні, не бував(ла)</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+      <div class="i-belong input-cont">
+        <mat-form-field appearance="fill">
+          <mat-label>Ти?</mat-label>
+          <mat-select formControlName="iBelong">
+            <mat-option value="Римо-католик">Римо-католик</mat-option>
+            <mat-option value="Греко-католик">Греко-католик</mat-option>
+            <mat-option value="Протестант">Протестант</mat-option>
+            <mat-option value="Православний">Православний</mat-option>
+            <mat-option value="Інше">Інше</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="email input-cont">
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input
+            required
+            matInput
+            formControlName="email"
+          >
+        </mat-form-field>
+      </div>
+      <div class="notes input-cont">
+        <mat-form-field appearance="fill">
+          <mat-label>Побажання, стан здоров'я та інше</mat-label>
+          <textarea matInput></textarea>
+        </mat-form-field>
+      </div>
     </form>
 </mat-dialog-content>
 
-<mat-dialog-actions></mat-dialog-actions>
+<mat-dialog-actions>
+  <button
+    color="accent"
+    mat-raised-button
+  >
+    Зареєструватися
+  </button>
+</mat-dialog-actions>
