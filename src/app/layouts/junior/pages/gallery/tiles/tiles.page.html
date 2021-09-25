@@ -24,13 +24,12 @@
     class="tiles-container"
   >
     <div
-      *ngFor="let tile of tiles, let i = index"
+      *ngFor="let photo of photos, let i = index"
       class="tile"
+      (click)="showPhotoWindow(photo)"
     >
-      <img [src]="tile.src" alt="tile">
+      <img [src]="photo.tile.src" alt="tile">
       <div
-        (click)="showPhotoWindow()"
-        *ngIf="i === tiles.length - 1"
         class="more"
       >
         <mat-icon>

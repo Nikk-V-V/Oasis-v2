@@ -1,4 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
+import {GalleryService} from "../../services/gallery.service";
+import {Photo} from "../../../../shared/classes/gallery";
 
 @Component({
   templateUrl: 'gallery.page.html',
@@ -6,12 +8,10 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 })
 export class GalleryPage implements  OnInit, OnDestroy{
 
-
-  constructor() {
+  constructor(private galleryService: GalleryService) {
   }
 
   ngOnInit(): void {
-
   }
 
   ngOnDestroy() {

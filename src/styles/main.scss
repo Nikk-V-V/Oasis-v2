@@ -107,9 +107,8 @@ img {
     display: block;
     flex: 1 1 10vw;
     height: 10vh;
-    animation: animate 2s ease-in-out forwards;
+    animation: animate 3s ease-in-out forwards;
     animation-delay: 1s;
-    opacity: 0;
     transition: 1s ease-in;
   }
 }

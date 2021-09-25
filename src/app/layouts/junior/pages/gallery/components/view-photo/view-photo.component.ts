@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
+import {Photo} from "../../../../../../shared/classes/gallery";
 
 @Component({
   selector: 'view-photo',
@@ -8,14 +9,19 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 })
 export class ViewPhotoComponent implements OnInit {
 
+  selectedPhoto: Photo;
+
   constructor(
     public dialogRef: MatDialogRef<ViewPhotoComponent>,
-    @Inject(MAT_DIALOG_DATA) public data
+    @Inject(MAT_DIALOG_DATA) public data: {photos: Photo[], photo: Photo}
   ) {
-    console.log(this.data)
+    this.selectedPhoto = data.photo;
   }
 
   ngOnInit(): void {
   }
 
+  selectPhoto(photo: Photo): void {
+    this.selectedPhoto = photo;
+  }
 }

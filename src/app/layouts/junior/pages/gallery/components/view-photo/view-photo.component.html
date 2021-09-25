@@ -7,14 +7,15 @@
     >
       <mat-icon>close</mat-icon>
     </button>
-    <img [src]="data[4].src"  alt="">
+    <img [src]="selectedPhoto.tile.src"  alt="">
   </div>
   <div class="photos">
     <div
-      *ngFor="let tile of data"
+      *ngFor="let photo of data.photos"
       class="photo"
+      (click)="selectPhoto(photo)"
     >
-      <img [src]="tile.src" alt="">
+      <img [src]="photo.tile.src" alt="">
     </div>
   </div>
 </section>

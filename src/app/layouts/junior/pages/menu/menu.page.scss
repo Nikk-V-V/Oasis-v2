@@ -45,7 +45,8 @@
   box-shadow: -3px -3px 10px rgb(39 66 142 / 50%), 3px 3px 10px #000000;
   background-image: linear-gradient(262.85deg, rgb(25 32 56 / 50%) 0%, rgb(46 58 89 / 50%) 100%);
   border-radius: 10px;
-  transition: 0.5s;
+  transition: 10s;
+  transition-delay: 10s;
   background-size: 200% auto;
   &:hover {
     background-position: right center;
@@ -58,13 +59,11 @@
   .top-menu-buttons {
     top: 10%;
     right: 10%;
-    transition-delay: .5s;
   }
 
   .bot-menu-buttons {
     bottom: 10%;
     left: 10%;
-    transition-delay: 1s;
   }
 }
 
