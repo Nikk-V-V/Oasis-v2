@@ -1,0 +1,16 @@
+div {
+  display: flex;
+  justify-content: center;
+  img {
+    width: 200px;
+  }
+}
+
+mat-dialog-actions {
+  display: flex;
+  justify-content: space-around;
+  button {
+    background: black;
+    color: white;
+  }
+}

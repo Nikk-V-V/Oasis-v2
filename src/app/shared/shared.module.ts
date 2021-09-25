@@ -9,13 +9,15 @@ import {MatButtonModule} from '@angular/material/button';
 import {RouterModule} from '@angular/router';
 import { SharesWindowComponent } from './components/card/shares-window/shares-window.component';
 import {MatDialogModule} from "@angular/material/dialog";
+import { UpdateWindowComponent } from './components/update-window/update-window.component';
 
 
 @NgModule({
   declarations: [
     ToolbarComponent,
     CardComponent,
-    SharesWindowComponent
+    SharesWindowComponent,
+    UpdateWindowComponent
   ],
     imports: [
         CommonModule,
