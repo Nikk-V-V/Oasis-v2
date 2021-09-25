@@ -10,6 +10,7 @@ export class UploadVersionService {
 
   constructor(private updates: SwUpdate, private dialog: MatDialog) {
     updates.available.subscribe(() => {
+      this.update();
     })
   }
 
