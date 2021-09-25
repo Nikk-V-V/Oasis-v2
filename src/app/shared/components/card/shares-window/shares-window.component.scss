@@ -1,10 +1,12 @@
 h3 {
   font-weight: 700;
+  text-align: center;
 }
 
 .button-wrapper {
   display: flex;
-  gap: 1rem
+  gap: 1rem;
+  justify-content: space-around;
 }
 
 button {
@@ -12,4 +14,13 @@ button {
     width: 24px;
     height: 24px;
   }
+}
+
+input {
+  background: black;
+  padding: 5px 10px;
+  max-width: 200px;
+  color: white;
+  border-radius: 5px;
+  margin: 1rem 0;
 }

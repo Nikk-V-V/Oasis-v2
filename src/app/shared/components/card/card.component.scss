@@ -15,7 +15,7 @@
     border: none;
     border-radius: 15px;
     transform-style: inherit;
-    transition: all 1s ease-in;
+    transition: all .5s ease-in;
     background: #00000054;
     &:nth-child(1) {
       transform: rotateX(40deg) rotateY(40deg);

@@ -12,7 +12,7 @@ export class GoToComponent implements OnInit {
   form: FormGroup;
 
   constructor(
-    public dialogRef: MatDialogRef<GoToComponent>
+    public dialogRef: MatDialogRef<GoToComponent>,
   ) { }
 
   ngOnInit(): void {

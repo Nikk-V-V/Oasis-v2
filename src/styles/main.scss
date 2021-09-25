@@ -150,7 +150,7 @@ img {
 .reg-to-event {
   mat-dialog-container {
     border-radius: 20px;
-    //box-shadow: -5px -5px 20px 5px #c098ff7a, 5px 5px 20px 5px #00125882, inset 0 0 0 154px #01008e38;
+    box-shadow: inset -253px 0px 0px 0px rgb(2 46 104 / 10%), inset 253px 0px 0px 0px rgb(87 5 118 / 10%);
   }
 }
 
@@ -158,5 +158,6 @@ img {
   .mat-dialog-container {
     background: black;
     color: white;
+    box-shadow: 0 0 20px 10px #190564, inset 0 0 20px 7px #31053a;
   }
 }

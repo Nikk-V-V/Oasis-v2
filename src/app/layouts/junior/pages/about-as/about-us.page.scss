@@ -16,7 +16,7 @@
     text-align: center;
     text-transform: uppercase;
     font-weight: 800;
-    color: rgba(255, 255, 255, 0.5);
+    //color: rgba(255, 255, 255, 0.5);
     text-shadow: 1px 1px 5px #7300c7,
     2px 2px 5px #7300c7,
     3px 3px 5px #7300c7,
@@ -29,8 +29,8 @@
   &__text {
     text-indent: 1.5em;
     text-align: justify;
-    color: #b87fe2;
-    font: 500 normal normal 16px/32px Roboto Mono;
+    color: #fffff0;
+    font: 600 normal normal 16px/32px Roboto Mono;
   }
   img {
     max-width: 200px;
