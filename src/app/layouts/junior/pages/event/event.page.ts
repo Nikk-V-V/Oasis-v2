@@ -19,8 +19,8 @@ export class EventPage implements  OnInit{
 
   ngOnInit(): void {
     this.meta.addTags([
-      {property: 'og:image', content: 'https://firebasestorage.googleapis.com/v0/b/oasa-f33c4.appspot.com/o/event%2Fevent.jpg_1632414538952?alt=media&token=a9ef8296-057c-4ad9-ae85-c087c5319879'},
-      {property: 'og:title', content: 'Oasis'}
+      {name: 'image', content: 'https://firebasestorage.googleapis.com/v0/b/oasa-f33c4.appspot.com/o/event%2Fevent.jpg_1632414538952?alt=media&token=a9ef8296-057c-4ad9-ae85-c087c5319879'},
+      {name: 'title', content: 'Oasis'}
     ])
   }
 
