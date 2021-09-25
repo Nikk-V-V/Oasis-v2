@@ -9,6 +9,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {SharedModule} from './shared/shared.module';
 import {AngularFireModule} from "@angular/fire/compat";
 import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 
 const router: Routes = [
@@ -35,6 +36,7 @@ const router: Routes = [
     }),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [
