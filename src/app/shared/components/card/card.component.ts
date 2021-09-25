@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
+import {SharesWindowComponent} from "./shares-window/shares-window.component";
 
 @Component({
   selector: 'app-card',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private dialog: MatDialog
+  ) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  share(): void {
+    this.dialog.open(SharesWindowComponent, {
+      panelClass: 'share-modal'
+    })
   }
-
 }

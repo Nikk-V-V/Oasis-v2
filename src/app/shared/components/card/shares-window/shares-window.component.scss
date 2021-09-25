@@ -1,0 +1,15 @@
+h3 {
+  font-weight: 700;
+}
+
+.button-wrapper {
+  display: flex;
+  gap: 1rem
+}
+
+button {
+  img {
+    width: 24px;
+    height: 24px;
+  }
+}

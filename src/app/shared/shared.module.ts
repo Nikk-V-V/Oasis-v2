@@ -7,12 +7,15 @@ import { CardComponent } from './components/card/card.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {RouterModule} from '@angular/router';
+import { SharesWindowComponent } from './components/card/shares-window/shares-window.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 
 @NgModule({
   declarations: [
     ToolbarComponent,
-    CardComponent
+    CardComponent,
+    SharesWindowComponent
   ],
     imports: [
         CommonModule,
@@ -21,6 +24,7 @@ import {RouterModule} from '@angular/router';
         MatCardModule,
         MatButtonModule,
         RouterModule,
+        MatDialogModule,
     ],
   providers: [],
     exports: [ToolbarComponent, CardComponent],

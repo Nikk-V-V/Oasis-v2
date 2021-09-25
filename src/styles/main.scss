@@ -153,3 +153,10 @@ img {
     //box-shadow: -5px -5px 20px 5px #c098ff7a, 5px 5px 20px 5px #00125882, inset 0 0 0 154px #01008e38;
   }
 }
+
+.share-modal {
+  .mat-dialog-container {
+    background: black;
+    color: white;
+  }
+}

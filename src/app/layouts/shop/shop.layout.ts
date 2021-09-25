@@ -2,9 +2,9 @@ import {Component, OnInit} from '@angular/core';
 
 
 @Component({
-  templateUrl: 'market.layout.html'
+  templateUrl: 'shop.layout.html'
 })
-export class MarketLayout implements OnInit {
+export class ShopLayout implements OnInit {
   constructor() {
   }
   ngOnInit(): void {
