@@ -21,7 +21,6 @@ export class GalleryService {
           return dates.map((data) => {
             return {
               tile: data.payload.doc.data(),
-              id: data.payload.doc.id
             }
           })
         })
