@@ -82,6 +82,11 @@
   }
 }
 
+.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 @media screen and (max-width: 1158px) {
   .top__content {

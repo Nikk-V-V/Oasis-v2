@@ -2,6 +2,9 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {GoToComponent} from "./go-to/go-to.component";
 import {Meta, Title} from "@angular/platform-browser";
+import {ActivatedRoute} from "@angular/router";
+import {EventService} from "../../services/event.service";
+import {Event} from "../../../../shared/classes/event";
 
 @Component({
   templateUrl: 'event.page.html',
@@ -9,19 +12,25 @@ import {Meta, Title} from "@angular/platform-browser";
 })
 export class EventPage implements  OnInit{
 
+  eventId: string
+  event: Event
 
   constructor(
+    private router: ActivatedRoute,
+    private eventService: EventService,
     private dialog: MatDialog,
-    private meta: Meta,
-    private titleService: Title,
   ) {
   }
 
   ngOnInit(): void {
-    this.meta.addTags([
-      {property: 'og:image', content: 'assets/images/baner2.jpg'},
-      {property: 'og:title', content: 'Oasis'}
-    ])
+    this.get()
+  }
+
+  get(): void {
+    this.router.params.subscribe(res => {
+      this.eventService.getById(res['id'])
+        .subscribe((event: Event) => this.event = event)
+    })
   }
 
   goTo(): void {

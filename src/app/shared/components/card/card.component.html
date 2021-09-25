@@ -1,10 +1,8 @@
 <section class="card-container">
-    <div class="card">
-      <img src="assets/images/baner2.jpg" alt="event">
+    <div *ngFor="let event of events" class="card">
+      <img [src]="event.event.image" alt="event">
       <div class="text">
-        <p>Привіт, привіт!</p>
-        <p>Ти, мабуть, вже з нетерпінням чекаєш на нашу чергову зустріч.</p>
-        <p>Тому для тебе є хороша новина: вона відбудеться з 17 по 27 липня 2021 р.Запрошуємо молодь віком від 13 до 17</p>
+        <p>{{event.event.paragraphs[0]}}</p>
       </div>
       <div class="actions">
         <button
@@ -13,41 +11,9 @@
           <mat-icon (click)="share()">share</mat-icon>
         </button>
         <button
-          routerLink="/jun/event/1"
+          [routerLink]="['/jun/event/', event.id]"
           mat-icon-button
         >
-          <mat-icon>play_arrow</mat-icon>
-        </button>
-      </div>
-    </div>
-    <div class="card">
-      <img src="assets/images/baner2.jpg" alt="event">
-      <div class="text">
-        <p>Привіт, привіт!</p>
-        <p>Ти, мабуть, вже з нетерпінням чекаєш на нашу чергову зустріч.</p>
-        <p>Тому для тебе є хороша новина: вона відбудеться з 17 по 27 липня 2021 р.Запрошуємо молодь віком від 13 до 17</p>
-      </div>
-      <div class="actions">
-        <button mat-icon-button>
-          <mat-icon>share</mat-icon>
-        </button>
-        <button mat-icon-button>
-          <mat-icon>play_arrow</mat-icon>
-        </button>
-      </div>
-    </div>
-    <div class="card">
-      <img src="assets/images/baner2.jpg" alt="event">
-      <div class="text">
-        <p>Привіт, привіт!</p>
-        <p>Ти, мабуть, вже з нетерпінням чекаєш на нашу чергову зустріч.</p>
-        <p>Тому для тебе є хороша новина: вона відбудеться з 17 по 27 липня 2021 р.Запрошуємо молодь віком від 13 до 17</p>
-      </div>
-      <div class="actions">
-        <button mat-icon-button>
-          <mat-icon>share</mat-icon>
-        </button>
-        <button mat-icon-button>
           <mat-icon>play_arrow</mat-icon>
         </button>
       </div>

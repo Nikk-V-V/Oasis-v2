@@ -17,6 +17,7 @@ import {MatSelectModule} from "@angular/material/select";
 import {MatListModule} from "@angular/material/list";
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {MatRadioModule} from "@angular/material/radio";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 const routes: Routes = [{path: '', component: EventPage}]
 
@@ -38,7 +39,8 @@ const routes: Routes = [{path: '', component: EventPage}]
         MatSelectModule,
         MatListModule,
         MatSlideToggleModule,
-        MatRadioModule
+        MatRadioModule,
+        MatProgressSpinnerModule
     ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'uk-UA'},
