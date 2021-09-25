@@ -108,8 +108,7 @@ img {
     flex: 1 1 10vw;
     height: 10vh;
     animation: animate 3s ease-in-out forwards;
-    animation-delay: 1s;
-    transition: 1s ease-in;
+    transition: 2s ease-in;
   }
 }
 
@@ -122,10 +121,7 @@ img {
 }
 
 @keyframes animate {
-  0% {
-    transform: translateZ(2000px);
-    background-attachment: fixed;
-  }
+  0% {transform: translateZ(2000px);}
   100% {
     transform: translateZ(0);
     background-image: url('../assets/images/img.jpg');
