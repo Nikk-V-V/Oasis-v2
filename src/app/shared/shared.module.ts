@@ -10,6 +10,7 @@ import {RouterModule} from '@angular/router';
 import { SharesWindowComponent } from './components/card/shares-window/shares-window.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import { UpdateWindowComponent } from './components/update-window/update-window.component';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -19,15 +20,16 @@ import { UpdateWindowComponent } from './components/update-window/update-window.
     SharesWindowComponent,
     UpdateWindowComponent
   ],
-    imports: [
-        CommonModule,
-        MatToolbarModule,
-        MatIconModule,
-        MatCardModule,
-        MatButtonModule,
-        RouterModule,
-        MatDialogModule,
-    ],
+  imports: [
+    CommonModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatCardModule,
+    MatButtonModule,
+    RouterModule,
+    MatDialogModule,
+    FormsModule,
+  ],
   providers: [],
     exports: [ToolbarComponent, CardComponent],
 })

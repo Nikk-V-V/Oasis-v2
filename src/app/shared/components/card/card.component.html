@@ -8,7 +8,9 @@
         <button
           mat-icon-button
         >
-          <mat-icon (click)="share()">share</mat-icon>
+          <mat-icon
+            (click)="share(event.id, event.event)"
+          >share</mat-icon>
         </button>
         <button
           [routerLink]="['/jun/event/', event.id]"

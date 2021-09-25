@@ -9,25 +9,28 @@ import {window} from "rxjs";
 })
 export class SharesWindowComponent implements OnInit {
 
-  link: string;
+  link: string = '';
 
   constructor(
     public dialogRef: MatDialogRef<SharesWindowComponent>,
-    @Inject(MAT_DIALOG_DATA) public data
-  ) { }
+    @Inject(MAT_DIALOG_DATA) public data: {title: string, image: string, id: string, type: string}
+  ) {
+    this.link = `https://${document.location.host}/${data.type}/${data.id}`
+  }
 
   ngOnInit(): void {
   }
 
   telegram(): void {
-    console.log(document.location.host)
-    // document.location.href = `https://t.me/share/url?url=${document.location.host}&text=Оазис`
+    document.location.href = `https://t.me/share/url?url=${document.location.host}&text=${this.data.title}`
   }
 
   facebook(): void {
+    document.location.href = `https://www.facebook.com/sharer.php?u=${document.location.host}&text=${this.data.title}&i=${this.data.image}`
   }
 
-  copyLink(): void {
-
+  copyLink(input: HTMLInputElement): void {
+    input.focus()
+    input.select()
   }
 }

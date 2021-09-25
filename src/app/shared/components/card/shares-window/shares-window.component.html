@@ -13,11 +13,14 @@
     >
       <img src="assets/icons/facebook-f-brands.svg" alt="">
     </button>
-    <button mat-icon-button>
+    <button
+      (click)="copyLink(input)"
+      mat-icon-button
+    >
       <img src="assets/icons/copy-solid.svg" alt="">
     </button>
   </div>
   <div>
-    <input disabled type="text">
+    <input [(ngModel)]="link" #input disabled type="text">
   </div>
 </mat-dialog-content>
