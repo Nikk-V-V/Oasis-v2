@@ -1,7 +1,11 @@
 <section class="card-container">
     <div *ngFor="let event of events" class="card">
       <img [src]="event.event.image" alt="event">
+
       <div class="text">
+        <h3 class="title">
+          {{event.event.title}}
+        </h3>
         <p>{{event.event.paragraphs[0]}}</p>
       </div>
       <div class="actions">

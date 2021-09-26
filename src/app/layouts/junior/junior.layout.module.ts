@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import {JuniorLayout} from './junior.layout';
 import {RouterModule, Routes} from '@angular/router';
 import {SharedModule} from '../../shared/shared.module';
+import { CongratsComponent } from './components/congrats/congrats.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatButtonModule} from "@angular/material/button";
 
 
 const routes: Routes = [
@@ -21,12 +24,14 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [JuniorLayout],
+  declarations: [JuniorLayout, CongratsComponent],
   exports: [],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    SharedModule
+    SharedModule,
+    MatDialogModule,
+    MatButtonModule
   ]
 })
 export class JuniorLayoutModule { }

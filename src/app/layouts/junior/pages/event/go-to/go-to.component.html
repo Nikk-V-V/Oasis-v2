@@ -1,91 +1,125 @@
 <mat-dialog-content>
     <form [formGroup]="form">
       <div class="full-name two-input">
-        <mat-form-field
-          appearance="fill"
+        <div
+          class="input-wrapper"
         >
-          <mat-label>Ім'я</mat-label>
-          <input
-            type="text"
-            formControlName="name"
-            matInput
-            required
+          <mat-form-field
+            appearance="fill"
           >
-        </mat-form-field>
-        <mat-form-field
-          appearance="fill"
-        >
-          <mat-label>Прізвище</mat-label>
-          <input
-            type="text"
-            formControlName="surname"
-            matInput
-            required
+            <mat-label>Ім'я</mat-label>
+            <input
+              type="text"
+              formControlName="name"
+              matInput
+              required
+            >
+          </mat-form-field>
+          <p *ngIf="!form.controls.name.valid && form.controls.name.touched">
+            Заповність це поле
+          </p>
+        </div>
+        <div class="input-wrapper">
+          <mat-form-field
+            appearance="fill"
           >
-        </mat-form-field>
+            <mat-label>Прізвище</mat-label>
+            <input
+              type="text"
+              formControlName="surname"
+              matInput
+              required
+            >
+          </mat-form-field>
+          <p *ngIf="!form.controls.surname.valid && form.controls.surname.touched">
+            Заповність це поле
+          </p>
+        </div>
       </div>
       <div class="age input-cont">
-        <mat-form-field appearance="fill">
-          <mat-label>Дата народження</mat-label>
-          <input
-            required
-            (dateChange)="calculateAge()"
-            matInput
-            autocomplete="off"
-            formControl="birthday"
-            [matDatepicker]="picker"
-            (focus)="picker.open()"
-          >
-          <mat-datepicker-toggle
-            matSuffix
-            [for]="picker"
-          ></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
+        <div class="input-wrapper">
+          <mat-form-field appearance="fill">
+            <mat-label>Дата народження</mat-label>
+            <input
+              required
+              (dateChange)="calculateAge()"
+              matInput
+              autocomplete="off"
+              formControlName="birthday"
+              [matDatepicker]="picker"
+              (focus)="picker.open()"
+            >
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <p *ngIf="form.controls.birthday.touched && +form.value.age === 0">
+            Учасник не може мати 0 років
+          </p>
+          <p *ngIf="!!form.value.age && 12 > form.value.age">
+            Учасник не може мати менше 12 років
+          </p>
+          <p *ngIf="!!form.value.age && form.value.age > 18">
+            Учасник не може мати більше 18 років
+          </p>
+        </div>
       </div>
       <div class="city input-cont">
-        <mat-form-field appearance="fill">
-          <mat-label>Місто</mat-label>
-          <input
-            required
-            type="text"
-            matInput
-            formControlName="city"
-          >
-        </mat-form-field>
-
+        <div class="input-wrapper">
+          <mat-form-field appearance="fill">
+            <mat-label>Місто</mat-label>
+            <input
+              required
+              type="text"
+              matInput
+              formControlName="city"
+            >
+          </mat-form-field>
+          <p *ngIf="!form.controls.city.valid && form.controls.city.touched">
+            Заповність це поле
+          </p>
+        </div>
       </div>
       <div class="sex input-cont">
-        <mat-form-field appearance="fill">
-          <mat-label>Ти?</mat-label>
-          <mat-select
-            required
-            formControlName="sex"
-          >
-            <mat-option value="Хлопець">Хлопець</mat-option>
-            <mat-option value="Дівчина">Дівчина</mat-option>
-          </mat-select>
-        </mat-form-field>
+        <div class="input-wrapper">
+          <mat-form-field appearance="fill">
+            <mat-label>Ти?</mat-label>
+            <mat-select
+              required
+              formControlName="sex"
+            >
+              <mat-option value="Хлопець">Хлопець</mat-option>
+              <mat-option value="Дівчина">Дівчина</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
       </div>
       <div class="phone two-input">
-        <mat-form-field appearance="fill">
-          <mat-label>Телефон учасника</mat-label>
-          <input
-            required
-            matInput
-            type="tel"
-            formControlName="phone"
-          >
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-          <mat-label>Телефон батьків</mat-label>
-          <input
-            required
-            matInput
-            type="tel"
-            formControlName="parentPhone"
-          >
-        </mat-form-field>
+        <div class="input-wrapper">
+          <mat-form-field appearance="fill">
+            <mat-label>Телефон учасника</mat-label>
+            <input
+              required
+              matInput
+              type="tel"
+              formControlName="phone"
+            >
+          </mat-form-field>
+        </div>
+        <div class="input-wrapper">
+          <mat-form-field appearance="fill">
+            <mat-label>Телефон батьків</mat-label>
+            <input
+              required
+              matInput
+              type="tel"
+              formControlName="parentPhone"
+            >
+          </mat-form-field>
+
+        </div>
       </div>
       <mat-list>
         <mat-list-item>
@@ -133,14 +167,17 @@
         </mat-form-field>
       </div>
       <div class="email input-cont">
-        <mat-form-field appearance="fill">
-          <mat-label>Email</mat-label>
-          <input
-            required
-            matInput
-            formControlName="email"
-          >
-        </mat-form-field>
+        <div class="input-wrapper">
+          <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input
+              required
+              matInput
+              formControlName="email"
+            >
+          </mat-form-field>
+
+        </div>
       </div>
       <div class="notes input-cont">
         <mat-form-field appearance="fill">
@@ -155,6 +192,7 @@
   <button
     color="accent"
     mat-raised-button
+    (click)="registration()"
   >
     Зареєструватися
   </button>

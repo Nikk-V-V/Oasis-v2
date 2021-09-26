@@ -4,13 +4,18 @@ import Firestore = firebase.firestore.Firestore;
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {map, Observable} from "rxjs";
 import {Event, EventResponse} from "../../../shared/classes/event";
+import {MatDialog} from "@angular/material/dialog";
+import {CongratsComponent} from "../components/congrats/congrats.component";
 
 @Injectable({
   providedIn: 'root'
 })
 export class EventService {
 
-  constructor(private store: AngularFirestore) { }
+  constructor(
+    private store: AngularFirestore,
+    private dialog: MatDialog
+  ) { }
 
   get(): Observable<any> {
     return this.store
@@ -30,5 +35,19 @@ export class EventService {
 
   getById(id: string): Observable<any> {
     return this.store.doc(`event/${id}`).valueChanges()
+  }
+
+  regToEvent(eventId: string, data: any) {
+
+    this.store
+      .collection(`regToEvent`)
+      .add(data)
+      .then(r => {
+        this.dialog.open(CongratsComponent, {
+          panelClass: 'congrats',
+          width: '100%',
+          maxWidth: '100%'
+        })
+      })
   }
 }

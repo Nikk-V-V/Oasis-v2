@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {MatDialogRef} from "@angular/material/dialog";
+import {Component, Inject, OnInit} from '@angular/core';
+import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {Photo} from "../../../../../shared/classes/gallery";
+import {EventService} from "../../../services/event.service";
 
 @Component({
   selector: 'app-go-to',
@@ -13,16 +15,18 @@ export class GoToComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<GoToComponent>,
+    @Inject(MAT_DIALOG_DATA) public data,
+    private eventService: EventService
   ) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      name: new FormControl('', Validators.required),
-      surname: new FormControl('', Validators.required),
+      name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      surname: new FormControl('', [Validators.required, Validators.minLength(3)]),
       birthday: new FormControl('', Validators.required),
-      age: new FormControl('', Validators.required),
+      age: new FormControl(null,[Validators.required, Validators.max(18)]),
       sex: new FormControl('', [Validators.required]),
-      city: new FormControl('Оберіть місто', [Validators.required]),
+      city: new FormControl('', [Validators.required]),
       phone: new FormControl(
         null,
         [
@@ -43,17 +47,17 @@ export class GoToComponent implements OnInit {
   }
 
   calculateAge(): void {
-    let birth_date = new Date(this.form.controls.birthday.value)
+    const birth_date = new Date(this.form.controls.birthday.value)
 
-    let birth_year = birth_date.getFullYear()
-    let birth_month = birth_date.getMonth()
-    let birth_day = birth_date.getDate()
+    const birth_year = birth_date.getFullYear()
+    const birth_month = birth_date.getMonth()
+    const birth_day = birth_date.getDate()
 
-    let today_date = new Date()
+    const today_date = new Date()
 
-    let today_year = today_date.getFullYear()
-    let today_month = today_date.getMonth()
-    let today_day = today_date.getDate()
+    const today_year = today_date.getFullYear()
+    const today_month = today_date.getMonth()
+    const today_day = today_date.getDate()
 
     let age = today_year - birth_year
 
@@ -61,6 +65,18 @@ export class GoToComponent implements OnInit {
     if (today_month === birth_month)
       if (today_day < birth_day) age--
 
-    // this.form.controls.age.value = age
+    this.form.get('age').setValue(age);
+  }
+
+  registration(): void {
+    const data = {
+      ...this.form.value,
+      birthday: new Date(this.form.value.birthday).toLocaleDateString(),
+      event: this.data.eventId
+    }
+
+    this.eventService.regToEvent(data.event, data)
+
+    this.dialogRef.close()
   }
 }

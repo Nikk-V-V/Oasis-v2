@@ -28,6 +28,7 @@ export class EventPage implements  OnInit{
 
   get(): void {
     this.router.params.subscribe(res => {
+      this.eventId = res['id'];
       this.eventService.getById(res['id'])
         .subscribe((event: Event) => this.event = event)
     })
@@ -35,7 +36,10 @@ export class EventPage implements  OnInit{
 
   goTo(): void {
     this.dialog.open(GoToComponent, {
-      panelClass: 'reg-to-event'
+      panelClass: 'reg-to-event',
+      data: {
+        eventId: this.eventId
+      }
     })
   }
 }

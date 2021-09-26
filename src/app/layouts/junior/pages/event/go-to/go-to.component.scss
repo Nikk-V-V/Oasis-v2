@@ -51,3 +51,14 @@ mat-dialog-actions {
     margin: 0 auto;
   }
 }
+
+.input-wrapper {
+  position: relative;
+  p {
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    font-size: 12px;
+    color: red;
+  }
+}

@@ -133,7 +133,6 @@ img {
   }
 }
 
-
 .photo-view {
   background: rgba(0, 0, 0, 0.05);
   mat-dialog-container {
@@ -153,5 +152,19 @@ img {
     background: black;
     color: white;
     box-shadow: 0 0 20px 10px #190564, inset 0 0 20px 7px #31053a;
+  }
+}
+
+.congrats {
+  mat-dialog-container {
+    width: 100%;
+    height: 100vh;
+    background: black;
+    padding: 0;
+    h1 {
+      height: 18px;
+      color: white;
+      font-weight: bold;
+    }
   }
 }
