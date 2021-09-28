@@ -193,6 +193,7 @@
     color="accent"
     mat-raised-button
     (click)="registration()"
+    [disabled]='!form.valid'
   >
     Зареєструватися
   </button>
