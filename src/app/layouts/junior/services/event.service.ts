@@ -1,11 +1,8 @@
 import { Injectable } from '@angular/core';
-import firebase from "firebase/compat";
-import Firestore = firebase.firestore.Firestore;
-import {AngularFirestore} from "@angular/fire/compat/firestore";
-import {map, Observable} from "rxjs";
-import {Event, EventResponse} from "../../../shared/classes/event";
-import {MatDialog} from "@angular/material/dialog";
-import {CongratsComponent} from "../components/congrats/congrats.component";
+import {AngularFirestore} from '@angular/fire/compat/firestore';
+import {map, Observable} from 'rxjs';
+import {MatDialog} from '@angular/material/dialog';
+import {CongratsComponent} from '../components/congrats/congrats.component';
 
 @Injectable({
   providedIn: 'root'
@@ -27,27 +24,26 @@ export class EventService {
             return {
               event: date.payload.doc.data(),
               id: date.payload.doc.id
-            }
-          })
+            };
+          });
         })
-      )
+      );
   }
 
   getById(id: string): Observable<any> {
-    return this.store.doc(`event/${id}`).valueChanges()
+    return this.store.doc(`event/${id}`).valueChanges();
   }
 
   regToEvent(eventId: string, data: any) {
-
     this.store
       .collection(`regToEvent`)
       .add(data)
-      .then(r => {
+      .then(() => {
         this.dialog.open(CongratsComponent, {
           panelClass: 'congrats',
           width: '100%',
           maxWidth: '100%'
-        })
-      })
+        });
+      });
   }
 }

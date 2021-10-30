@@ -1,10 +1,9 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {MatDialog} from "@angular/material/dialog";
-import {GoToComponent} from "./go-to/go-to.component";
-import {Meta, Title} from "@angular/platform-browser";
-import {ActivatedRoute} from "@angular/router";
-import {EventService} from "../../services/event.service";
-import {Event} from "../../../../shared/classes/event";
+import {Component, OnInit} from '@angular/core';
+import {MatDialog} from '@angular/material/dialog';
+import {GoToComponent} from './go-to/go-to.component';
+import {ActivatedRoute} from '@angular/router';
+import {EventService} from '../../services/event.service';
+import {Event} from '../../../../shared/classes/event';
 
 @Component({
   templateUrl: 'event.page.html',
@@ -12,8 +11,8 @@ import {Event} from "../../../../shared/classes/event";
 })
 export class EventPage implements  OnInit{
 
-  eventId: string
-  event: Event
+  eventId: string;
+  event: Event;
 
   constructor(
     private router: ActivatedRoute,
@@ -23,15 +22,15 @@ export class EventPage implements  OnInit{
   }
 
   ngOnInit(): void {
-    this.get()
+    this.get();
   }
 
   get(): void {
     this.router.params.subscribe(res => {
-      this.eventId = res['id'];
-      this.eventService.getById(res['id'])
-        .subscribe((event: Event) => this.event = event)
-    })
+      this.eventId = res.id;
+      this.eventService.getById(res.id)
+        .subscribe((event: Event) => this.event = event);
+    });
   }
 
   goTo(): void {
@@ -40,6 +39,6 @@ export class EventPage implements  OnInit{
       data: {
         eventId: this.eventId
       }
-    })
+    });
   }
 }

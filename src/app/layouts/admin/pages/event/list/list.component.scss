@@ -1,0 +1,21 @@
+.list {
+  padding: 2rem;
+  min-height: 100vh;
+  .add-event {
+    position: fixed;
+    bottom: 2rem;
+    right: 3rem;
+    box-shadow: 0 0 10px 0 #9c27b0;
+    color: #9c27b0;
+  }
+}
+.action-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.mat-expansion-panel {
+  background-color: #0e0013;
+  box-shadow: 0 0 10px 0 #9c27b0;
+}

@@ -5,6 +5,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {SharedModule} from '../../../../shared/shared.module';
 import {MAT_DATE_LOCALE} from '@angular/material/core';
 
+
 const routes: Routes = [{
   path: '', component: EventPage, children: [
     {path: '', redirectTo: 'list', pathMatch: 'full'},

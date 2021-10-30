@@ -3,7 +3,7 @@
                [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
                [mode]="(isHandset$ | async) ? 'over' : 'side'"
                [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Опції</mat-toolbar>
+    <mat-toolbar></mat-toolbar>
     <mat-nav-list>
       <mat-accordion>
         <mat-expansion-panel hideToggle>
@@ -36,7 +36,7 @@
 
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content>
+    <mat-sidenav-content>
     <mat-toolbar color="primary">
       <button
         type="button"
@@ -48,6 +48,6 @@
       </button>
       <span>Oasis admin</span>
     </mat-toolbar>
-    <router-outlet *ngIf="rout"></router-outlet>
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

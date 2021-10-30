@@ -10,8 +10,6 @@ import {map, shareReplay} from 'rxjs/operators';
 })
 export class AdminLayout implements OnInit {
 
-  rout = false;
-
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
