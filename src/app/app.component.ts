@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {UploadVersionService} from "./shared/services/upload-version.service";
+import {UploadVersionService} from './shared/services/upload-version.service';
 
 @Component({
   selector: 'app-root',
