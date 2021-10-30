@@ -7,9 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 import {BrowserModule} from '@angular/platform-browser';
 import {SharedModule} from './shared/shared.module';
-import {AngularFireModule} from "@angular/fire/compat";
-import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
-import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {AngularFireModule} from '@angular/fire/compat';
+import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 const router: Routes = [
@@ -18,6 +18,7 @@ const router: Routes = [
   {path: 'jun', loadChildren: () => import('./layouts/junior/junior.layout.module').then(m => m.JuniorLayoutModule)},
   {path: 'child', loadChildren: () => import('./layouts/children/children.layout.module').then(m => m.ChildrenLayoutModule)},
   {path: 'shop', loadChildren: () => import('./layouts/shop/shop.layout.module').then(m => m.ShopLayoutModule)},
+  {path: 'admin', loadChildren: () => import('./layouts/admin/admin.layout.module').then(m => m.AdminLayoutModule)},
 ];
 
 

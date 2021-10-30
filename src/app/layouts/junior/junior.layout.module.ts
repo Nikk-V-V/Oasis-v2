@@ -4,8 +4,8 @@ import {JuniorLayout} from './junior.layout';
 import {RouterModule, Routes} from '@angular/router';
 import {SharedModule} from '../../shared/shared.module';
 import { CongratsComponent } from './components/congrats/congrats.component';
-import {MatDialogModule} from "@angular/material/dialog";
-import {MatButtonModule} from "@angular/material/button";
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
 
 
 const routes: Routes = [

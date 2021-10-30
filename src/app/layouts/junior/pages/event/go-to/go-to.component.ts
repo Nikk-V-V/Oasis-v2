@@ -1,8 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {Photo} from "../../../../../shared/classes/gallery";
-import {EventService} from "../../../services/event.service";
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {EventService} from '../../../services/event.service';
 
 @Component({
   selector: 'app-go-to',
@@ -24,7 +23,7 @@ export class GoToComponent implements OnInit {
       name: new FormControl('', [Validators.required, Validators.minLength(3)]),
       surname: new FormControl('', [Validators.required, Validators.minLength(3)]),
       birthday: new FormControl('', Validators.required),
-      age: new FormControl(null,[Validators.required, Validators.max(18)]),
+      age: new FormControl(null, [Validators.required, Validators.max(18)]),
       sex: new FormControl('', [Validators.required]),
       city: new FormControl('', [Validators.required]),
       phone: new FormControl(
@@ -43,27 +42,28 @@ export class GoToComponent implements OnInit {
       iBelong: new FormControl('', [Validators.required]),
       notes: new FormControl(''),
       email: new FormControl(null, [Validators.required, Validators.pattern(/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/)]),
-    })
+    });
   }
 
   calculateAge(): void {
-    const birth_date = new Date(this.form.controls.birthday.value)
+    const birthDate = new Date(this.form.controls.birthday.value);
 
-    const birth_year = birth_date.getFullYear()
-    const birth_month = birth_date.getMonth()
-    const birth_day = birth_date.getDate()
+    const birthYear = birthDate.getFullYear();
+    const birthMonth = birthDate.getMonth();
+    const birthDay = birthDate.getDate();
 
-    const today_date = new Date()
+    const todayDate = new Date();
 
-    const today_year = today_date.getFullYear()
-    const today_month = today_date.getMonth()
-    const today_day = today_date.getDate()
+    const todayYear = todayDate.getFullYear();
+    const todayMonth = todayDate.getMonth();
+    const todayDay = todayDate.getDate();
 
-    let age = today_year - birth_year
+    let age = todayYear - birthYear;
 
-    if (today_month < birth_month) age--
-    if (today_month === birth_month)
-      if (today_day < birth_day) age--
+    if (todayMonth < birthMonth) { age--; }
+    if (todayMonth === birthMonth) {
+      if (todayDay < birthDay) { age--; }
+    }
 
     this.form.get('age').setValue(age);
   }
@@ -73,10 +73,10 @@ export class GoToComponent implements OnInit {
       ...this.form.value,
       birthday: new Date(this.form.value.birthday).toLocaleDateString(),
       event: this.data.eventId
-    }
+    };
 
-    this.eventService.regToEvent(data.event, data)
+    this.eventService.regToEvent(data.event, data);
 
-    this.dialogRef.close()
+    this.dialogRef.close();
   }
 }

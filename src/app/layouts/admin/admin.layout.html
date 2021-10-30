@@ -1,0 +1,53 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+               [mode]="(isHandset$ | async) ? 'over' : 'side'"
+               [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Опції</mat-toolbar>
+    <mat-nav-list>
+      <mat-accordion>
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            Молодіжний Оазис
+          </mat-expansion-panel-header>
+          <a mat-list-item routerLink="event">Події</a>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>Галерея</mat-expansion-panel-header>
+            <a mat-list-item href="#">Цитати</a>
+            <a mat-list-item href="#">Фото</a>
+          </mat-expansion-panel>
+<!--          <a mat-list-item href="#">Галерея</a>-->
+          <a mat-list-item href="#">Свідчення</a>
+        </mat-expansion-panel>
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            Дитячий Оазис
+          </mat-expansion-panel-header>
+          <a mat-list-item href="#">Події</a>
+          <a mat-list-item href="#">Галерея</a>
+          <a mat-list-item href="#">Свідчення</a>
+        </mat-expansion-panel>
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            Магазин
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Oasis admin</span>
+    </mat-toolbar>
+    <router-outlet *ngIf="rout"></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
