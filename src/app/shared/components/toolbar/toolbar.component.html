@@ -3,13 +3,13 @@
 >
   <div
     class="logo"
-    routerLink="/jun/home"
+    [routerLink]="[homePath, 'home']"
   >
     <img src="assets/images/logo.webp" alt="logo">
   </div>
   <div
     *ngIf="visibility"
-    routerLink="menu"
+    [routerLink]="[homePath, 'menu']"
     class="link"
   >
     <mat-icon>menu_open</mat-icon>

@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {MatDialog} from "@angular/material/dialog";
-import {SharesWindowComponent} from "./shares-window/shares-window.component";
-import {Event, EventResponse} from "../../classes/event";
+import {MatDialog} from '@angular/material/dialog';
+import {SharesWindowComponent} from './shares-window/shares-window.component';
+import {Event, EventResponse} from '../../classes/event';
 
 @Component({
   selector: 'app-card',
@@ -10,7 +10,7 @@ import {Event, EventResponse} from "../../classes/event";
 })
 export class CardComponent implements OnInit {
 
-  @Input('events') events: EventResponse[];
+  @Input() events: EventResponse[];
 
   constructor(
     private dialog: MatDialog
@@ -27,6 +27,6 @@ export class CardComponent implements OnInit {
         id,
         type: 'jun'
       }
-    })
+    });
   }
 }
