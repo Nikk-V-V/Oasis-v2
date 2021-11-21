@@ -16,11 +16,6 @@ export class UploadVersionService {
   }
 
   update() {
-    this.dialog.open(UpdateWindowComponent)
-      .close((res) => {
-        if (res) {
-          this.updates.activateUpdate().then(() => document.location.reload());
-        }
-      });
+    this.updates.activateUpdate().then(() => document.location.reload());
   }
 }
