@@ -8,6 +8,19 @@
   },
   "hosting": {
     "public": "dist/prod",
+    "headers": [{
+      "source": "/*.@(js|css)",
+      "headers": [{
+        "key": "Cache-Control",
+        "value": "max-age=86400, must-revalidate, public, no-cache"
+      }]
+    }, {
+      "source": "**/*.@(jpg|jpeg|gif|png|webp)",
+      "headers": [ {
+        "key": "Cache-Control",
+        "value": "max-age=86400, must-revalidate, public, no-cache"
+      }]
+    }],
     "ignore": [
       "firebase.json",
       "**/.*",
