@@ -1,0 +1,21 @@
+<section class="view-photo">
+  <div class="photo">
+    <button
+      mat-icon-button
+      color="accent"
+      (click)="dialogRef.close()"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+    <img [src]="selectedPhoto.tile.src"  alt="">
+  </div>
+  <div class="photos">
+    <div
+      *ngFor="let photo of data.photos"
+      class="photo"
+      (click)="selectPhoto(photo)"
+    >
+      <img [src]="photo.tile.src" alt="">
+    </div>
+  </div>
+</section>

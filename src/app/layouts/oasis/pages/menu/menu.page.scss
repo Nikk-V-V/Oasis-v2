@@ -1,0 +1,77 @@
+.menu {
+  background: url("../../../../../assets/images/menu-background.png") #000 no-repeat center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+
+}
+
+.menu-container {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  transition: 2s ease-in-out;
+  animation: shadow 2s ease-in-out forwards;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  position: absolute;
+  transition: 2s ease-out;
+}
+
+.top-menu-buttons {
+  top: -100%;
+  right: -100%;
+}
+
+.bot-menu-buttons {
+  bottom: -100%;
+  left: -100%;
+}
+
+.button {
+  cursor: pointer;
+  width: 150px;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  box-shadow: -3px -3px 10px rgb(39 66 142 / 50%), 3px 3px 10px #000000;
+  background-image: linear-gradient(262.85deg, rgb(25 32 56 / 50%) 0%, rgb(46 58 89 / 50%) 100%);
+  border-radius: 10px;
+  transition: 10s;
+  transition-delay: 10s;
+  background-size: 200% auto;
+  &:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.load {
+  .top-menu-buttons {
+    top: 10%;
+    right: 10%;
+  }
+
+  .bot-menu-buttons {
+    bottom: 10%;
+    left: 10%;
+  }
+}
+
+@keyframes shadow {
+  0% {
+    box-shadow: inset 0 0 110px 400px black;
+  }
+  100% {
+    box-shadow: inset 0 0 110px 0 black;
+  }
+}

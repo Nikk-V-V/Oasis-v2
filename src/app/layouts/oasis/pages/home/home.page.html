@@ -1,0 +1,28 @@
+<section class="home">
+  <canvas #oasis id="oasis"></canvas>
+  <section class="top-content">
+    <div *ngIf="quote" class="text content-item">{{quote}}</div>
+    <div *ngIf="listTitle && listItems.length && conclusions" class="text content-item">
+      <h2>{{listTitle}}</h2>
+      <ul>
+        <li *ngFor="let item of listItems">
+          {{item}}
+        </li>
+      </ul>
+      <h2>{{conclusions}}</h2>
+    </div>
+    <div class="image content-item">
+      <img src="assets/images/logo2.webp" alt="oasis">
+    </div>
+  </section>
+  <main>
+    <section *ngIf="events.length" class="events">
+      <h1 class="title">Ми чекаємо на тебе!</h1>
+      <app-card [events]="events"></app-card>
+    </section>
+    <section class="socials">
+      <h1 class="title">ОАЗИС повсюди</h1>
+      <social-card></social-card>
+    </section>
+  </main>
+</section>

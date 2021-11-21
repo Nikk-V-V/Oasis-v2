@@ -1,0 +1,41 @@
+<section class="about">
+  <div class="about__part">
+    <div>
+      <div
+        *ngFor="let history of historyPart, index as i"
+        [ngClass]="{
+          'about__title': i === 0,
+          'about__text': i !== 0
+        }"
+      >
+        <span *ngIf="![1, 8].includes(i)">{{history}}</span>
+        <img [ngClass]="{
+          'float-left': i === 1,
+          'float-right': i === 8
+        }" *ngIf="[1, 8].includes(i)" [src]="history" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="about__part">
+    <div
+      *ngFor="let part of nowPart, index as i"
+      [ngClass]="{
+          'about__title': i === 0,
+          'about__text': i !== 0
+        }"
+    >
+      {{part}}
+    </div>
+  </div>
+  <div class="about__part">
+    <div
+      *ngFor="let part of endPart, index as i"
+      [ngClass]="{
+          'about__title': i === 0,
+          'about__text': i !== 0
+        }"
+    >
+      {{part}}
+    </div>
+  </div>
+</section>
