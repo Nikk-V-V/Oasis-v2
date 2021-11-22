@@ -24,19 +24,19 @@
     </div>
     <div class="bot-menu-buttons button-wrapper">
       <div
-        routerLink="/jun/home"
+        [routerLink]="[path, 'home']"
         class="button btn-grad"
       >
         Головна
       </div>
       <div
-        routerLink="/jun/contacts"
+        [routerLink]="[path, 'contacts']"
         class="button btn-grad"
       >
         Контакти
       </div>
       <div
-        routerLink="/preview"
+        [routerLink]="[path, 'preview']"
         class="button btn-grad"
       >
         Інше

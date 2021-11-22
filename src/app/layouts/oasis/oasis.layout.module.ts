@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {OasisLayout} from './oasis.layout';
 import {RouterModule, Routes} from '@angular/router';
 import {SharedModule} from '../../shared/shared.module';
@@ -61,7 +61,12 @@ routes = [
         }
       },
       {
-        path: 'gallery',
+        path: 'jun/gallery',
+        loadChildren: () => import('./pages/gallery/gallery.module').then(m => m.GalleryModule),
+        data: {animation: 'GalleryPage'}
+      },
+      {
+        path: 'child/gallery',
         loadChildren: () => import('./pages/gallery/gallery.module').then(m => m.GalleryModule),
         data: {animation: 'GalleryPage'}
       },
@@ -71,7 +76,12 @@ routes = [
         data: {animation: 'EventPage'}
       },
       {
-        path: 'contacts',
+        path: 'jun/contacts',
+        loadChildren: () => import('./pages/contacts/contacts.module').then(m => m.ContactsModule),
+        data: {animation: 'ContactsPage'}
+      },
+      {
+        path: 'child/contacts',
         loadChildren: () => import('./pages/contacts/contacts.module').then(m => m.ContactsModule),
         data: {animation: 'ContactsPage'}
       },
@@ -140,7 +150,12 @@ routes = [
         }
       },
       {
-        path: 'testimony',
+        path: 'jun/testimony',
+        loadChildren: () => import('./pages/testimony/testimony.module').then(m => m.TestimonyModule),
+        data: {animation: 'TestimonyPage'}
+      },
+      {
+        path: 'child/testimony',
         loadChildren: () => import('./pages/testimony/testimony.module').then(m => m.TestimonyModule),
         data: {animation: 'TestimonyPage'}
       },
