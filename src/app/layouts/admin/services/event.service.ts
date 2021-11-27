@@ -27,7 +27,7 @@ export class EventService {
   }
 
   getAll(type): Observable<any> {
-    const collection = this.store.collection(`event/${type}`, ref => ref.orderBy('title', 'asc')).snapshotChanges();
+    const collection = this.store.collection(`event`, ref => ref.where('type', '==', type)).snapshotChanges();
     collection.subscribe((res: any) => {
       this.events.next(res.map((a: any) => {
         const data = a.payload.doc.data();

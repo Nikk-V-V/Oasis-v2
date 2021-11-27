@@ -1,19 +1,16 @@
 
 export interface Event {
   id?: string;
-  address: string;
-  affiliate: string;
-  document: string;
-  email: string;
-  endDate: string;
-  image: string;
-  phone: string;
-  price: string;
-  startDate: string;
-  statusReg: boolean;
   title: string;
+  info: string[];
+  price: number;
+  additionalPrice: number;
+  startDate: string;
+  endDate: string;
+  statusReg: string;
   type: string;
-  paragraphs: Array<string>;
+  document: string;
+  image: string;
 }
 
 

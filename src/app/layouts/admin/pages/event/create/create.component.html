@@ -1,8 +1,23 @@
 <section class="create">
   <form [formGroup]="form" class="top__content">
-    <div class="image item">
-      <img src="assets/images/vga.webp" alt="">
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem">
+      <div *ngIf="!img" class="image item">
+        <img (click)="file.click()" src="assets/images/vga.webp" alt="">
+      </div>
+      <input type="file" #file style="display:none;" (change)="loadImg($event)">
+      <div (click)="file.click()" *ngIf="img" class="image item">
+        <img [src]="img" alt="">
+      </div>
+      <button
+        [disabled]="isDisableDownload"
+        (click)="load()"
+        class="going"
+        style="margin: 0 auto; display: block"
+      >
+        Завантажити
+      </button>
     </div>
+
     <div class="text item">
       <mat-form-field>
         <mat-label>Назва</mat-label>
@@ -38,6 +53,7 @@
                 ></textarea>
               </mat-form-field>
               <button
+                (click)="red(i)"
                 mat-icon-button
               >
                 <mat-icon class="mat-24">edit</mat-icon>
@@ -47,20 +63,35 @@
         </mat-accordion>
 
         <div class="document">
-          <p>
-            Тут можна завантажити
-            <button mat-button>
-              <a>
-                Документи
-              </a>
-            </button>
-          </p>
+          <mat-form-field>
+            <mat-label>Посилання на документ</mat-label>
+            <input matInput formControlName="document">
+          </mat-form-field>
         </div>
         <div class="price">
+          <mat-form-field>
+            <mat-label>Ціна</mat-label>
+            <input matInput formControlName="price">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Амін збір</mat-label>
+            <input matInput formControlName="additionalPrice">
+          </mat-form-field>
+        </div>
+        <div class="date">
+          <mat-form-field appearance="outline">
+            <mat-label>Оазис відбуватиметься</mat-label>
+            <mat-date-range-input [rangePicker]="picker">
+              <input matStartDate formControlName="startDate" placeholder="Початок">
+              <input matEndDate formControlName="endDate" placeholder="Кінець">
+            </mat-date-range-input>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+          </mat-form-field>
         </div>
         <div class="it__will">
           <p style="text-align: center">
-            Початок о 17:00, завершення о 12:00
+            Початок о 17:00 {{form.value?.startDate | date: 'M/d/yy'}}, завершення о 12:00 {{form.value?.endDate | date: 'M/d/yy'}}
           </p>
           <p>
             Батьки мають самостійно подбати про вчасний доїзд на табір і повернення до дому своєї дитини.
@@ -68,9 +99,11 @@
         </div>
       </div>
       <button
-        class="going"
+          (click)="createEvent()"
+          [disabled]='!form.valid'
+          class="going"
       >
-        Я їду
+        Створити
       </button>
     </div>
   </form>

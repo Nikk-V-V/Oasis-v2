@@ -1,0 +1,9 @@
+.content {
+  min-height: 100vh;
+}
+
+.content.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

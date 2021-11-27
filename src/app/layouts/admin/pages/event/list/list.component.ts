@@ -25,7 +25,7 @@ export class ListComponent implements OnInit, OnDestroy {
     this.route.data.subscribe(data => {
       this.type = window.location.pathname.split('/')[2];
       this.get(this.type);
-    })
+    });
   }
 
   ngOnDestroy = (): void => {

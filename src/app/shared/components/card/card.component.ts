@@ -13,10 +13,12 @@ export class CardComponent implements OnInit {
   @Input() events: EventResponse[];
 
   constructor(
-    private dialog: MatDialog
+    private dialog: MatDialog,
   ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
 
   share(id: string, event: Event): void {
     this.dialog.open(SharesWindowComponent, {

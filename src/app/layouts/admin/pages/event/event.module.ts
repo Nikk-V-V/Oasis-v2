@@ -10,7 +10,8 @@ const routes: Routes = [{
   path: '', component: EventPage, children: [
     {path: '', redirectTo: 'list', pathMatch: 'full'},
     {path: 'list', loadChildren: () => import('./list/list.module').then(m => m.ListModule)},
-    {path: 'create', loadChildren: () => import('./create/create.module').then(m => m.CreateModule)}
+    {path: 'create', loadChildren: () => import('./create/create.module').then(m => m.CreateModule)},
+    {path: ':id', loadChildren: () => import('./participants/participants.module').then(m => m.ParticipantsModule)}
   ]
 }];
 
