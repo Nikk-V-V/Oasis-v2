@@ -3,6 +3,7 @@ import {AngularFirestore} from '@angular/fire/compat/firestore';
 import {map, Observable} from 'rxjs';
 import {MatDialog} from '@angular/material/dialog';
 import {CongratsComponent} from '../components/congrats/congrats.component';
+import {Event} from "../../../shared/classes/event";
 
 @Injectable({
   providedIn: 'root'
@@ -30,8 +31,8 @@ export class EventService {
       );
   }
 
-  getById(id: string): Observable<any> {
-    return this.store.doc(`event/${id}`).valueChanges();
+  getById(id: string): Observable<Event> {
+    return this.store.doc<Event>(`event/${id}`).valueChanges();
   }
 
   regToEvent(eventId: string, data: any) {

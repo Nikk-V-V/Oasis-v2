@@ -71,9 +71,14 @@ routes = [
         data: {animation: 'GalleryPage'}
       },
       {
-        path: 'event/:id',
+        path: 'jun/event/:id',
         loadChildren: () => import('./pages/event/event.module').then(m => m.EventModule),
-        data: {animation: 'EventPage'}
+        data: {animation: 'EventPage', type: 'jun'}
+      },
+      {
+        path: 'child/event/:id',
+        loadChildren: () => import('./pages/event/event.module').then(m => m.EventModule),
+        data: {animation: 'EventPage', type: 'child'}
       },
       {
         path: 'jun/contacts',

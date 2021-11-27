@@ -89,7 +89,9 @@ export class CreateComponent implements OnInit {
   }
 
   async createEvent() {
-      await this.eventService.create(this.form.value);
-      await this.router.navigate([`admin/${this.type}/event/list`]);
+    this.form.value.startDate = this.form.value.startDate.toString();
+    this.form.value.endDate = this.form.value.endDate.toString();
+    await this.eventService.create(this.form.value);
+    await this.router.navigate([`admin/${this.type}/event/list`]);
   }
 }

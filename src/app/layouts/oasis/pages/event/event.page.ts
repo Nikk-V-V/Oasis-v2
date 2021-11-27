@@ -29,7 +29,9 @@ export class EventPage implements  OnInit{
     this.router.params.subscribe(res => {
       this.eventId = res.id;
       this.eventService.getById(res.id)
-        .subscribe((event: Event) => this.event = event);
+        .subscribe((event: Event) => {
+          this.event = event;
+        });
     });
   }
 

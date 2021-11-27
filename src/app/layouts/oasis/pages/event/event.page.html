@@ -26,11 +26,11 @@
           </p>
         </div>
         <div class="price">
-         {{event.price}}
+          Ціна: {{event.price}} <span *ngIf="event.additionalPrice">адмін збір {{event.additionalPrice}}</span>, якщо немає можливості заплатити дзвоніть с. Божені.
         </div>
         <div class="it__will">
           <p style="text-align: center">
-            Початок {{event.startDate}} о 17:00, завершення {{event.endDate}} о 12:00
+            Початок о 17:00 {{event?.startDate | date: 'MM/dd/yy'}}, завершення о 12:00 {{event?.endDate | date: 'MM/dd/yy'}}.
           </p>
           <p>
             Батьки мають самостійно подбати про вчасний доїзд на табір і повернення до дому своєї дитини.
