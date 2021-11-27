@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {finalize} from 'rxjs';
 import {AngularFireStorage} from '@angular/fire/compat/storage';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-events',
@@ -10,6 +11,7 @@ import {AngularFireStorage} from '@angular/fire/compat/storage';
 })
 export class CreateComponent implements OnInit {
 
+  type: string;
   form: FormGroup;
   file: File;
   paragraphs: string[] = [];
@@ -19,9 +21,13 @@ export class CreateComponent implements OnInit {
 
   constructor(
     private storage: AngularFireStorage,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
+    this.route.data.subscribe(data => {
+      this.type = window.location.pathname.split('/')[2];
+    });
     this.form = new FormGroup({
       title: new FormControl('', [Validators.required, Validators.minLength(3)]),
       info: new FormControl([]),

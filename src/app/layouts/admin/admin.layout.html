@@ -10,7 +10,7 @@
           <mat-expansion-panel-header>
             Молодіжний Оазис
           </mat-expansion-panel-header>
-          <a mat-list-item routerLink="jun/event">Події</a>
+          <a mat-list-item [routerLink]="['jun/event']" >Події</a>
           <mat-expansion-panel hideToggle>
             <mat-expansion-panel-header>Галерея</mat-expansion-panel-header>
             <a mat-list-item href="#">Цитати</a>
@@ -23,7 +23,7 @@
           <mat-expansion-panel-header>
             Дитячий Оазис
           </mat-expansion-panel-header>
-          <a mat-list-item routerLink="child/event">Події</a>
+          <a mat-list-item routerLink="child/event/list">Події</a>
           <mat-expansion-panel hideToggle>
             <mat-expansion-panel-header>Галерея</mat-expansion-panel-header>
             <a mat-list-item href="#">Цитати</a>

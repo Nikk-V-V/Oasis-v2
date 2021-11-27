@@ -30,7 +30,7 @@
   <button
     class="add-event"
     mat-icon-button
-    routerLink="create"
+    [routerLink]="['/admin', type, 'event', 'create']"
   >
     <mat-icon>add</mat-icon>
   </button>

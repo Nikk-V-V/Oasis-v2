@@ -1,34 +1,39 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Event} from '../../../../../shared/classes/event';
 import {EventService} from '../../../services/event.service';
 import {Subscription} from 'rxjs';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-events',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
-export class ListComponent implements OnInit {
+export class ListComponent implements OnInit, OnDestroy {
 
   events: Array<Event> = [];
   sub: Subscription;
 
+  type: string;
 
   constructor(
     private event: EventService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    this.get();
+    this.route.data.subscribe(data => {
+      this.type = window.location.pathname.split('/')[2];
+      this.get(this.type);
+    })
   }
 
   ngOnDestroy = (): void => {
     this.sub.unsubscribe();
   }
 
-  get(): void {
-    this.sub = this.event.getAll().subscribe(res => {
-      console.log(res);
+  get(type: string): void {
+    this.sub = this.event.getAll(type).subscribe(res => {
       this.events = res;
     });
   }

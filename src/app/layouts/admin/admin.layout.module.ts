@@ -12,10 +12,10 @@ import {MatExpansionModule} from '@angular/material/expansion';
 
 const routes: Routes = [{
   path: '', component: AdminLayout, children: [
-    {path: 'child/event', loadChildren: () => import('./pages/event/event.module').then(m => m.EventModule)},
-    {path: 'jun/event', loadChildren: () => import('./pages/event/event.module').then(m => m.EventModule)},
-    {path: 'jun/gallery', loadChildren: () => import('./pages/gallery/gallery.module').then(m => m.GalleryModule)},
-    {path: 'child/gallery', loadChildren: () => import('./pages/gallery/gallery.module').then(m => m.GalleryModule)},
+    {path: 'child/event', loadChildren: () => import('./pages/event/event.module').then(m => m.EventModule), data: {type: 'child'}},
+    {path: 'jun/event', loadChildren: () => import('./pages/event/event.module').then(m => m.EventModule), data: {type: 'jun'}},
+    {path: 'jun/gallery', loadChildren: () => import('./pages/gallery/gallery.module').then(m => m.GalleryModule), data: {type: 'jun'}},
+    {path: 'child/gallery', loadChildren: () => import('./pages/gallery/gallery.module').then(m => m.GalleryModule), data: {type: 'child'}},
   ]}
 ];
 

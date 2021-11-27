@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {EventService} from '../../services/event.service';
 import {Event} from '../../../../shared/classes/event';
 import {Subscriber} from 'rxjs';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   templateUrl: 'event.page.html',
@@ -14,6 +15,7 @@ export class EventPage implements  OnInit{
 
   constructor(
     private event: EventService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
