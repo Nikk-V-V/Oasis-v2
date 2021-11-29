@@ -1,0 +1,10 @@
+.d-grid {
+  display: grid;
+  grid-gap: 2rem;
+  justify-items: center;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+p {
+  text-align: center;
+}

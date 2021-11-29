@@ -1,14 +1,21 @@
 <section class="participants">
-  <div *ngIf="dataSource?.participants.length">
+  <div class="wrapper">
+    <form [formGroup]="form" class="tools">
+      <mat-form-field appearance="fill">
+        <mat-label>Ім'я та/або прізвище</mat-label>
+        <input matInput type="text" formControlName="search">
+      </mat-form-field>
+      <div>
+        <button (click)="exportData()" mat-raised-button color="primary">Export table</button>
+      </div>
+    </form>
     <div class="content">
       <table
-
         mat-table
         class="full-width-table"
         matSort
         aria-label="Elements"
       >
-
         <ng-container matColumnDef="name" sticky>
           <th mat-header-cell *matHeaderCellDef mat-sort-header>Ім`я</th>
           <td mat-cell *matCellDef="let row">{{row.name}}</td>
@@ -106,10 +113,5 @@
       >
       </mat-paginator>
     </div>
-  </div>
-  <div class="content empty" *ngIf="!dataSource?.participants.length">
-    <mat-card-title>
-      Поки немає учасників
-    </mat-card-title>
   </div>
 </section>

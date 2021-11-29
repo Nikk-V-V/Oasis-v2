@@ -1,0 +1,162 @@
+<mat-dialog-content>
+  <mat-card>
+    <mat-card-content class="d-grid">
+      <div>
+        <mat-card-header>
+          <mat-card-subtitle>Ім'я:</mat-card-subtitle>
+        </mat-card-header>
+        <p>{{data?.name}}</p>
+      </div>
+      <div>
+        <mat-card-header>
+          <mat-card-subtitle>Прізвище:</mat-card-subtitle>
+        </mat-card-header>
+        <p>
+          {{data?.surname}}
+        </p>
+      </div>
+    </mat-card-content>
+
+    <mat-card-content>
+      <mat-card-header>
+        <mat-card-subtitle>Email:</mat-card-subtitle>
+      </mat-card-header>
+      <div class="d-flex j-center">
+        <p>{{data?.email}}</p>
+      </div>
+
+    </mat-card-content>
+
+    <mat-card-content class="d-grid">
+      <div>
+        <mat-card-header>
+          <mat-card-subtitle>Телефон учасника</mat-card-subtitle>
+        </mat-card-header>
+        <div>{{data?.phone}}</div>
+        <div>
+          Телеграм
+          <mat-icon
+            color="accent"
+            *ngIf="data?.isTelegram"
+          >verified</mat-icon>
+          <mat-icon
+            color="warn"
+            *ngIf="!data?.isTelegram"
+          >not_interested</mat-icon>
+        </div>
+        <div>
+          Viber
+          <mat-icon
+            color="accent"
+            *ngIf="data?.isViber"
+          >verified</mat-icon>
+          <mat-icon
+            color="warn"
+            *ngIf="!data?.isViber"
+          >not_interested</mat-icon>
+        </div>
+        <div>
+          WhatsApp
+          <mat-icon
+            color="accent"
+            *ngIf="data?.isWhatsApp"
+          >verified</mat-icon>
+          <mat-icon
+            color="warn"
+            *ngIf="!data?.isWhatsApp"
+          >not_interested</mat-icon>
+        </div>
+      </div>
+      <div>
+        <mat-card-header>
+          <mat-card-subtitle>Телефон батьків</mat-card-subtitle>
+        </mat-card-header>
+        <p>
+          {{data?.parentPhone}}
+        </p>
+      </div>
+    </mat-card-content>
+
+    <mat-card-content class="d-grid">
+      <div>
+        <mat-card-header>
+          <mat-card-subtitle>Дата народження</mat-card-subtitle>
+        </mat-card-header>
+        <p>
+          {{data?.birthday}}
+        </p>
+      </div>
+      <div>
+        <mat-card-header>
+          <mat-card-subtitle>Вік</mat-card-subtitle>
+        </mat-card-header>
+        <p>
+          {{data?.age}}
+        </p>
+      </div>
+    </mat-card-content>
+
+    <mat-card-content>
+      <div>
+        <mat-card-header>
+          <mat-card-subtitle>Деномінація</mat-card-subtitle>
+        </mat-card-header>
+        <p [innerHTML]="data?.iBelong"></p>
+      </div>
+    </mat-card-content>
+
+    <mat-card-content class="d-grid">
+      <div>
+        <mat-card-header>
+          <mat-card-subtitle>
+            Приймав участь в молодіжному оазисі?
+          </mat-card-subtitle>
+        </mat-card-header>
+        <p [innerHTML]="data?.itWasJun ? 'Так' : 'Ні'">
+        </p>
+      </div>
+      <div>
+        <mat-card-header>
+          <mat-card-subtitle>
+            Приймав участь в дитячому оазисі?
+          </mat-card-subtitle>
+        </mat-card-header>
+        <p [innerHTML]="data?.itWasChild ? 'Так' : 'Ні'"></p>
+      </div>
+    </mat-card-content>
+
+    <mat-card-content class="j-center">
+      <div>
+        <mat-card-header>
+          <mat-card-subtitle>
+            Рівень
+          </mat-card-subtitle>
+        </mat-card-header>
+        <p
+          *ngIf="!data?.itWasJun"
+        >
+          0 - Вперше
+        </p>
+        <p
+          *ngIf="data?.age < 15"
+        >
+          1 - Молодша група
+        </p>
+        <p
+          *ngIf="data?.age >= 15 && data?.itWasJun"
+        >
+          2 - Старша група
+        </p>
+      </div>
+    </mat-card-content>
+
+    <mat-card-content>
+      <div>
+        <mat-card-header>
+          <mat-card-subtitle>Нотатки</mat-card-subtitle>
+        </mat-card-header>
+        <p [innerHTML]="data?.notes"></p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</mat-dialog-content>

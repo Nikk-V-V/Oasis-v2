@@ -27,10 +27,11 @@ export interface Participants {
   sex: string;
   city: string;
   phone: number;
+  email: string;
   isTelegram: boolean;
   isViber: boolean;
   isWhatsApp: boolean;
-  parentsPhone: number;
+  parentPhone: number;
   itWasJun: boolean;
   itWasChild: boolean;
   iBelong: string;

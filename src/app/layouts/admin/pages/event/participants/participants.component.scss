@@ -7,3 +7,31 @@
   justify-content: center;
   align-items: center;
 }
+
+.participants {
+  background-color: #424242;
+  padding: 1.5rem;
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    .content {
+      border-top: 1px solid #595959;
+      border-bottom: 1px solid #595959;
+      overflow-x: auto;
+      table {
+        min-width: 1000px;
+      }
+    }
+  }
+}
+
+.mat-table {
+  width: 100%;
+}
+
+.tools {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

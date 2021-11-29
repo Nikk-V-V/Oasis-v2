@@ -10,7 +10,7 @@
   }
   .card {
     position: relative;
-    width: 250px;
+    width: 200px;
     overflow: hidden;
     border: none;
     border-radius: 15px;
@@ -43,8 +43,17 @@
     .text {
       font-family: Roboto Mono, sans-serif;
       padding: 15px 15px 0;
-      text-align: justify;
+      text-align: center;
       transform-style: inherit;
+      .title {
+        text-transform: uppercase;
+        font: 400 20px / 28px Roboto, "Helvetica Neue", sans-serif;
+        letter-spacing: normal;
+        margin: 0 0 16px;
+        font-weight: 700;
+        color: #151825;
+        text-shadow: -2px -2px 5px #007eef, 2px 2px 5px #ff00e0;
+      }
     }
     .side {
       width: 50%;

@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
-import {SwUpdate, VersionReadyEvent} from '@angular/service-worker';
-import {filter} from 'rxjs';
+import {SwUpdate} from '@angular/service-worker';
 import {map} from 'rxjs/operators';
 
 @Injectable({
@@ -9,17 +8,10 @@ import {map} from 'rxjs/operators';
 export class UploadVersionService {
 
   constructor(private swUpdate: SwUpdate) {
-    const updatesAvailable = swUpdate.versionUpdates.pipe(
-      filter((evt): evt is VersionReadyEvent => evt.type === 'VERSION_READY'),
-      map(evt => ({
-        type: 'UPDATE_AVAILABLE',
-        current: evt.currentVersion,
-        available: evt.latestVersion,
-      })),
-      map(el => {
-        console.log(el);
-        return el
-      })
+    this.swUpdate.versionUpdates.pipe(
+      map(() => {
+        this.swUpdate.activateUpdate().then(r => window.location.reload());
+      }),
     );
   }
 }

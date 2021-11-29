@@ -11,13 +11,16 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatListModule} from '@angular/material/list';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
+import { InfoComponent } from './info/info.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 
 const routes: Routes = [{path: '', component: ParticipantsComponent}];
 
 @NgModule({
-  declarations: [ParticipantsComponent],
+  declarations: [ParticipantsComponent, InfoComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
@@ -30,6 +33,9 @@ const routes: Routes = [{path: '', component: ParticipantsComponent}];
     MatListModule,
     MatInputModule,
     MatIconModule,
+    MatDialogModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
 })
 export class ParticipantsModule { }

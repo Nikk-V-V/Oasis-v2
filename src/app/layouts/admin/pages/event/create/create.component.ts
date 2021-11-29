@@ -47,8 +47,10 @@ export class CreateComponent implements OnInit {
 
 
   addInfo(par: HTMLTextAreaElement) {
-    this.paragraphs.push(par.value);
-    par.value = '';
+    if (par.value.trim()) {
+      this.paragraphs.push(par.value);
+      par.value = '';
+    }
   }
 
   loadImg(e: any): void {
