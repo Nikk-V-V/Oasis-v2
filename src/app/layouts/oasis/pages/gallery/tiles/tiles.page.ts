@@ -36,10 +36,10 @@ export class TilesPage implements OnInit {
   }
 
   getTiles(): void {
-    for (let i = 1; i < 100; i++) {
+    for (let i = 1; i < 500; i++) {
       const duration = `animation-duration:${this.getDuration}`;
       const delay = `animation-delay:${this.getDelay}`;
-      if (i < 50) {
+      if (i < 250) {
         this.one
           .nativeElement
           .innerHTML += `
@@ -84,10 +84,10 @@ export class TilesPage implements OnInit {
   }
 
   get getDuration(): string {
-    return `${2 * (Math.random() * 5)}s`;
+    return `${2 * (Math.random() * 7)}s`;
   }
 
   get getDelay(): string {
-    return `${Math.random() * 5}s`;
+    return `${Math.random() * 7}s`;
   }
 }
