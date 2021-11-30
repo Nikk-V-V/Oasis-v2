@@ -1,7 +1,87 @@
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  <!--  created with Free Online Sitemap Generator www.xml-sitemaps.com  -->
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <url>
+    <loc>https://oazys.net.ua/</loc>
+    <lastmod>2021-11-30T21:38:39+00:00</lastmod>
+  </url>
   <url>
     <loc>https://oazys.net.ua/preview</loc>
+    <lastmod>2021-11-30T21:38:39+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://oazys.net.ua/oasis/jun/home</loc>
+    <lastmod>2021-11-30T21:38:39+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://oazys.net.ua/oasis/jun/menu</loc>
+    <lastmod>2021-11-30T21:38:39+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://oazys.net.ua/oasis/jun/about</loc>
+    <lastmod>2021-11-30T21:38:39+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://oazys.net.ua/oasis/jun/contacts</loc>
+    <lastmod>2021-11-30T21:38:39+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://oazys.net.ua/oasis/jun/testimony</loc>
+    <lastmod>2021-11-30T21:38:39+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://oazys.net.ua/oasis/jun/gallery/tiles</loc>
+    <lastmod>2021-11-30T21:38:39+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://oazys.net.ua/oasis/jun/gallery/accordion</loc>
+    <lastmod>2021-11-30T21:38:39+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://oazys.net.ua/oasis/jun/gallery/videos</loc>
+    <lastmod>2021-11-30T21:38:39+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://oazys.net.ua/oasis/jun/gallery/videos-study</loc>
+    <lastmod>2021-11-30T21:38:39+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://oazys.net.ua/oasis/child/home</loc>
+    <lastmod>2021-11-30T21:38:39+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://oazys.net.ua/oasis/child/menu</loc>
+    <lastmod>2021-11-30T21:38:39+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://oazys.net.ua/oasis/child/about</loc>
+    <lastmod>2021-11-30T21:38:39+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://oazys.net.ua/oasis/child/contacts</loc>
+    <lastmod>2021-11-30T21:38:39+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://oazys.net.ua/oasis/child/testimony</loc>
+    <lastmod>2021-11-30T21:38:39+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://oazys.net.ua/oasis/child/gallery/tiles</loc>
+    <lastmod>2021-11-30T21:38:39+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://oazys.net.ua/oasis/child/gallery/accordion</loc>
+    <lastmod>2021-11-30T21:38:39+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://oazys.net.ua/oasis/child/gallery/videos</loc>
+    <lastmod>2021-11-30T21:38:39+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://oazys.net.ua/oasis/child/gallery/videos-study</loc>
     <lastmod>2021-11-30T21:38:39+00:00</lastmod>
   </url>
 </urlset>
