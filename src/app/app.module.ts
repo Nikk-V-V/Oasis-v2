@@ -13,7 +13,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 const router: Routes = [
-  {path: '', redirectTo: 'preview', pathMatch: 'full'},
+  {path: '', redirectTo: '/preview', pathMatch: 'full'},
   {path: 'preview', loadChildren: () => import('./layouts/preview/preview.layout.module').then(m => m.PreviewLayoutModule)},
   {path: 'oasis', loadChildren: () => import('./layouts/oasis/oasis.layout.module').then(m => m.OasisLayoutModule)},
   {path: 'shop', loadChildren: () => import('./layouts/shop/shop.layout.module').then(m => m.ShopLayoutModule)},
