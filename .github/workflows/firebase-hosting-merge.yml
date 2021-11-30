@@ -5,7 +5,7 @@ name: Deploy to Firebase Hosting on merge
 'on':
   push:
     branches:
-      - staging
+      - 'master'
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
@@ -17,4 +17,4 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_STAGE_OASA }}'
           channelId: live
-          projectId: stage-oasa
+          projectId: Oasa
