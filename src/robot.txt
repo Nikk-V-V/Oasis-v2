@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /admin/
+Sitemap: https://oazys.net.ua/sitemap.xml
+Host: https://oazys.net.ua
