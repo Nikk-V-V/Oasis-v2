@@ -3,7 +3,7 @@ import {AngularFirestore} from '@angular/fire/compat/firestore';
 import {map, Observable} from 'rxjs';
 import {MatDialog} from '@angular/material/dialog';
 import {CongratsComponent} from '../components/congrats/congrats.component';
-import {Event} from "../../../shared/classes/event";
+import {Event} from '../../../shared/classes/event';
 
 @Injectable({
   providedIn: 'root'
@@ -15,9 +15,9 @@ export class EventService {
     private dialog: MatDialog
   ) { }
 
-  get(): Observable<any> {
+  get(type: string): Observable<any> {
     return this.store
-      .collection('event', ref => ref.orderBy('title', 'asc'))
+      .collection('event', ref => ref.where('type', '==', type))
       .snapshotChanges()
       .pipe(
         map((dates) => {

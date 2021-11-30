@@ -21,9 +21,9 @@ export class CardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.route.url.subscribe(url => {
+    this.route.url.subscribe(() => {
       this.type = window.location.pathname.split('/')[2];
-    })
+    });
   }
 
   share(id: string, event: Event): void {

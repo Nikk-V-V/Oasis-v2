@@ -39,14 +39,14 @@ export class HomePage implements  OnInit, OnDestroy{
       this.listTitle = data.listTitle;
       this.listItems = data.listItems;
       this.conclusions = data.conclusions;
-      this.getEvents();
+      this.getEvents(data.type);
     });
   }
 
   ngOnDestroy() {
   }
 
-  getEvents(): void {
-    this.eventService.get().subscribe((events: EventResponse[]) => this.events = events);
+  getEvents(type: string): void {
+    this.eventService.get(type).subscribe((events: EventResponse[]) => this.events = events);
   }
 }

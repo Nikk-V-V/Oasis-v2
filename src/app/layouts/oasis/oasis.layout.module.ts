@@ -17,6 +17,7 @@ routes = [
         path: 'jun/home',
         loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule),
         data: {
+          type: 'jun',
           animation: 'HomePage',
           fireEventsLink: 'event/jun',
           quote: 'Дорогі юнаки й дівчата, буду радий бачити, як ви біжите вперед швидше від повільних і боязких. Біжіть, приваблені тим дуже любим Обличчям, яке адоруємо в Пресвятій Євхаристії та розпізнаємо в тілі страждаючого брата чи сестри… Церква потребує вашого пориву, вашої чуйності, вашої віри… А коли прибудете туди, куди ми ще не дійшли, наберіться терпеливості, щоб нас дочекатися"(Папа Франциск, Christus Vivit 9,299)',
@@ -29,6 +30,7 @@ routes = [
         path: 'child/home',
         loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule),
         data: {
+          type: 'child',
           animation: 'HomePage',
           fireEventsLink: 'event/child',
           quote: '',
