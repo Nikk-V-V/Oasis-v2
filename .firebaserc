@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "Oasa"
-  }
+    "default": "stage-oasa",
+    "production": "oasa-f33c4"
+  },
+  "targets": {}
 }
