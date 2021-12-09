@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UploadVersionService} from './shared/services/upload-version.service';
 
 @Component({
