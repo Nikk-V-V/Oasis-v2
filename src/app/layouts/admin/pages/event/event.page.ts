@@ -24,14 +24,4 @@ export class EventPage implements  OnInit{
   ngOnDestroy = (): void => {
     this.sub.unsubscribe();
   }
-
-
-
-  delete(event: Event): void {
-    this.event.delete(event.id, event.image);
-  }
-
-  updateStatus(event: Event): void {
-    this.event.updateStatus(event.id);
-  }
 }

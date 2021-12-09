@@ -30,19 +30,38 @@
         </div>
         <div class="it__will">
           <p style="text-align: center">
-            Початок о 17:00 {{event?.startDate | date: 'MM/dd/yy'}}, завершення о 12:00 {{event?.endDate | date: 'MM/dd/yy'}}.
+            Початок програми {{event.startDate | date: 'd MMMM'}} о {{event.startTime}}, завершення {{event.endDate | date: 'd MMMM'}} о {{event.endTime}}.
           </p>
           <p>
-            Батьки мають самостійно подбати про вчасний доїзд на табір і повернення до дому своєї дитини.
+            {{event.importantly}}
           </p>
         </div>
       </div>
-      <button
-        (click)="goTo()"
-        class="going"
-      >
-         Я їду
-      </button>
+      <div [ngSwitch]="event.statusReg">
+
+        <button
+          *ngSwitchCase="'Active'"
+          (click)="goTo()"
+          class="going"
+        >
+          Я їду
+        </button>
+        <button
+          disabled
+          *ngSwitchCase="'Stop'"
+          class="going"
+        >
+          Реєстрацію призупинено
+        </button>
+        <button
+          disabled
+          *ngSwitchCase="'End'"
+          class="going"
+        >
+          Реєстрацію завершено
+        </button>
+      </div>
+
     </div>
   </div>
 </section>

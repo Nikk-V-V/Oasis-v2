@@ -51,8 +51,8 @@ export class EventService {
     this.store.doc(`event/${id}`).update(data).then();
   }
 
-  updateStatus(id: string): void {
-    this.store.doc(`event/${id}`).update({statusReg: false}).then();
+  updateStatus(id: string, status: string): void {
+    this.store.doc(`event/${id}`).update({statusReg: status}).then();
   }
 
   getParticipants(eventId: string): Observable<any> {

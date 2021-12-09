@@ -39,7 +39,6 @@
         <mat-accordion>
           <mat-expansion-panel *ngFor="let p of paragraphs; index as i" hideToggle>
             <mat-expansion-panel-header>
-              {{p}}
             </mat-expansion-panel-header>
             <div class="mat-form-field-flex">
               <mat-form-field color="primary">
@@ -88,13 +87,48 @@
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-date-range-picker #picker></mat-date-range-picker>
           </mat-form-field>
+          <div style="gap: 2rem" class="mat-form-field-flex">
+            <mat-form-field
+              style="text-align: center"
+              appearance="outline"
+            >
+              <mat-label>Час початку</mat-label>
+              <input
+                formControlName="startTime"
+                matInput
+                type="time"
+              >
+            </mat-form-field>
+            <mat-form-field
+              style="text-align: center"
+              appearance="outline"
+            >
+              <mat-label>Час кінця</mat-label>
+              <input
+                formControlName="endTime"
+                matInput
+                type="time"
+              >
+            </mat-form-field>
+          </div>
+          <mat-form-field
+            style="text-align: center"
+            appearance="outline"
+          >
+            <mat-label>Важливо, до уваги і тд.</mat-label>
+            <input
+              formControlName="importantly"
+              matInput
+              type="text"
+            >
+          </mat-form-field>
         </div>
         <div class="it__will">
           <p style="text-align: center">
-            Початок о 17:00 {{form.value?.startDate | date: 'M/d/yy'}}, завершення о 12:00 {{form.value?.endDate | date: 'M/d/yy'}}
+            Початок {{form.value?.startDate | date: 'd MMMM'}} о {{form.value?.startTime}}, завершення {{form.value?.endDate | date: 'd MMMM'}} о {{form.value?.endTime}}.
           </p>
           <p>
-            Батьки мають самостійно подбати про вчасний доїзд на табір і повернення до дому своєї дитини.
+            {{form.value.importantly}}
           </p>
         </div>
       </div>

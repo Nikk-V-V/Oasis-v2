@@ -13,6 +13,7 @@
     width: 50%;
   }
   .image {
+    display: flex;
     max-width: 500px;
     min-width: 300px;
     overflow: hidden;
@@ -55,7 +56,7 @@
     }
   }
   .going {
-    width: 150px;
+    min-width: 150px;
     padding: 10px 1rem;
     border-radius: 5px;
     border: none;

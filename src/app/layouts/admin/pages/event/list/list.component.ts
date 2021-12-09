@@ -42,7 +42,7 @@ export class ListComponent implements OnInit, OnDestroy {
     this.event.delete(event.id, event.image);
   }
 
-  updateStatus(event: Event): void {
-    this.event.updateStatus(event.id);
+  updateStatus(event: Event, status: string): void {
+    this.event.updateStatus(event.id, status);
   }
 }

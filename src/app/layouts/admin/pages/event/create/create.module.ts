@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {LOCALE_ID, NgModule } from '@angular/core';
+import {CommonModule, registerLocaleData} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 import {CreateComponent} from './create.component';
 import {MatCardModule} from '@angular/material/card';
@@ -30,7 +30,7 @@ const routes: Routes = [{path: '', component: CreateComponent}];
         MatNativeDateModule
     ],
     providers: [
-      {provide: MAT_DATE_LOCALE, useValue: 'uk-UA'}
+      {provide: MAT_DATE_LOCALE, useValue: 'uk-UA'},
     ]
 })
 export class CreateModule { }

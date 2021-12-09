@@ -1,3 +1,4 @@
+import {FormControl, Validators} from "@angular/forms";
 
 export interface Event {
   id?: string;
@@ -11,6 +12,9 @@ export interface Event {
   type: string;
   document: string;
   image: string;
+  startTime: string;
+  endTime: string;
+  importantly: string;
 }
 
 

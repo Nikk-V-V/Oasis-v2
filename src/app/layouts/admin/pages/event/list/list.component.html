@@ -22,8 +22,13 @@
         <button
           color="warn"
           mat-raised-button
-          (click)="updateStatus(event)"
+          (click)="updateStatus(event, 'End')"
         >Завершити реєстрацію</button>
+        <button
+          color="warn"
+          mat-raised-button
+          (click)="updateStatus(event, event.statusReg === 'Active' ? 'Stop' : 'Active')"
+        >Зупинити/продовжити реєстрацію</button>
       </div>
     </mat-expansion-panel>
   </mat-accordion>

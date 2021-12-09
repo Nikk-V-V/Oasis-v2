@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
 import { environment } from '../environments/environment';
 
 import {AppComponent} from './app.component';
@@ -11,6 +11,10 @@ import {AngularFireModule} from '@angular/fire/compat';
 import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 
+import localeUA from '@angular/common/locales/uk';
+import {registerLocaleData} from '@angular/common';
+
+registerLocaleData(localeUA);
 
 const router: Routes = [
   {path: '', redirectTo: 'preview', pathMatch: 'full'},
@@ -39,7 +43,9 @@ const router: Routes = [
     AngularFirestoreModule,
     MatSnackBarModule
   ],
-  providers: [],
+  providers: [
+    {provide: LOCALE_ID, useValue: 'uk-UA'}
+  ],
   bootstrap: [
     AppComponent
   ]
