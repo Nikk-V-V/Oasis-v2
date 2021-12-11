@@ -7,7 +7,7 @@ import {
   Scene,
   TextureLoader,
   WebGLRenderer
-} from 'three';
+} from 'three/src/Three';
 
 @Injectable({
   providedIn: 'root'
@@ -38,9 +38,7 @@ export class BackgroundService {
   }
 
   public createScene(canvas: ElementRef<HTMLCanvasElement>): void {
-    // The first step is to get the reference of the canvas element from our HTML document
     this.canvas = canvas.nativeElement;
-    // create the scene
     this.scene = new Scene();
 
     this.camera = new PerspectiveCamera(

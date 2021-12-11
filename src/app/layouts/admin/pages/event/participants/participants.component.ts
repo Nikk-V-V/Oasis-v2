@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {Participants} from '../../../../../shared/classes/event';
 import {EventService} from '../../../services/event.service';
 import {ActivatedRoute} from '@angular/router';
@@ -16,7 +16,7 @@ import {FormControl, FormGroup} from '@angular/forms';
   templateUrl: './participants.component.html',
   styleUrls: ['./participants.component.scss']
 })
-export class ParticipantsComponent implements OnInit, OnDestroy, AfterViewInit {
+export class ParticipantsComponent implements OnInit, AfterViewInit {
 
   constructor(
     private router: ActivatedRoute,
@@ -38,9 +38,8 @@ export class ParticipantsComponent implements OnInit, OnDestroy, AfterViewInit {
     'name', 'surname', 'age', 'sex', 'city', 'level', 'iBelong', 'phone', 'star'
   ];
 
-  sub: any;
-
   participants: Participants[] = [];
+
   eventId: string;
 
   uid = JSON.parse(localStorage.getItem('uid') as string);
@@ -48,33 +47,29 @@ export class ParticipantsComponent implements OnInit, OnDestroy, AfterViewInit {
   form: FormGroup;
 
   searchResult: Participants[] = [];
-  ngOnDestroy(): void {
-    this.sub.unsubscribe();
-  }
 
   ngOnInit(): void {
     this.form = new FormGroup({
       search: new FormControl('')
     });
     this.form.get('search').valueChanges.subscribe((change) => {
-
-      const filterd = this.participants.filter(el => (
+      const filtered = this.participants.filter(el => (
         el.name.toLocaleLowerCase().includes(change.toLowerCase().trim())
         || el.surname.toLowerCase().includes(change.toLowerCase().trim())
         || `${el.name.toLowerCase()} ${el.surname.toLowerCase()}`.includes(change.toLowerCase().trim())
         || `${el.surname.toLowerCase()} ${el.name.toLowerCase()}`.includes(change.toLowerCase().trim())
       ));
-      this.setDataSource(filterd);
+      this.setDataSource(filtered);
     });
   }
 
-  async ngAfterViewInit(): Promise<void> {
-    await this.init();
+  ngAfterViewInit(): void {
+    this.init().then();
   }
 
   async init(): Promise<void> {
     this.router.params.subscribe(res => this.eventId = res.id);
-    this.sub = this.eventService.getParticipants(this.eventId).subscribe(async (res) => {
+    this.eventService.getParticipants(this.eventId).subscribe(async (res) => {
       this.participants = res;
       this.setDataSource(res);
     });

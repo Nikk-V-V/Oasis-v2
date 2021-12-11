@@ -1,6 +1,6 @@
 <section class="list">
   <mat-accordion>
-    <mat-expansion-panel *ngFor="let event of events">
+    <mat-expansion-panel *ngFor="let event of events | async">
       <mat-expansion-panel-header>
         {{event.title}}
       </mat-expansion-panel-header>
@@ -8,6 +8,7 @@
         <button
           color="accent"
           mat-raised-button
+          [routerLink]="['/admin', type, 'event', 'update', event.id]"
         >Редагувати</button>
         <button
           color="primary"

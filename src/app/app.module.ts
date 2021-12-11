@@ -41,7 +41,7 @@ const router: Routes = [
     }),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    MatSnackBarModule
+    MatSnackBarModule,
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'uk-UA'}

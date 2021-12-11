@@ -11,7 +11,7 @@ import {
   Scene,
   TextureLoader,
   WebGLRenderer,
-} from 'three';
+} from 'three/src/Three';
 
 @Injectable({providedIn: 'root'})
 export class RenderService implements OnDestroy {
@@ -23,7 +23,7 @@ export class RenderService implements OnDestroy {
   private directionalLight: DirectionalLight;
   private cloudGeo: PlaneBufferGeometry;
   private cloudMaterial: MeshLambertMaterial;
-  private flash : PointLight;
+  private flash: PointLight;
 
   private cloudParticles: Mesh[] = [];
 
@@ -54,7 +54,7 @@ export class RenderService implements OnDestroy {
     this.ambient = new AmbientLight(0x555555);
     this.scene.add(this.ambient);
     this.directionalLight = new DirectionalLight(0xffeedd);
-    this.directionalLight.position.set(0,0,1);
+    this.directionalLight.position.set(0, 0, 1);
     this.scene.add(this.directionalLight);
 
     this.renderer = new WebGLRenderer({
@@ -67,15 +67,15 @@ export class RenderService implements OnDestroy {
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(this.renderer.domElement);
 
-    let loader = new TextureLoader();
-    loader.load('assets/textures/smoke.png', (texture) =>{
+    const loader = new TextureLoader();
+    loader.load('assets/textures/smoke.png', (texture) => {
       this.cloudGeo = new PlaneBufferGeometry(400, 400);
       this.cloudMaterial = new MeshLambertMaterial({
         map: texture,
         transparent: true,
       });
-      for(let p = 0; p < 140; p++) {
-        let cloud = new Mesh(this.cloudGeo, this.cloudMaterial);
+      for (let p = 0; p < 140; p++) {
+        const cloud = new Mesh(this.cloudGeo, this.cloudMaterial);
         cloud.position.set(
           Math.random() * 1000 - Math.random() * 850,
           Math.random() * 1000,
@@ -85,18 +85,18 @@ export class RenderService implements OnDestroy {
         cloud.rotation.y = -0.12;
         cloud.rotation.z = Math.random() * 360;
         cloud.material.opacity = 0.6;
-        this.cloudParticles.push(cloud)
+        this.cloudParticles.push(cloud);
         this.scene.add(cloud);
       }
     });
 
-    let background = new TextureLoader();
+    const background = new TextureLoader();
     background.load('assets/textures/fon3.jpg', (texture => {
-      this.scene.background = texture
-    }))
+      this.scene.background = texture;
+    }));
 
-    this.flash = new PointLight(0x062d89, 30, 500 ,1.7);
-    this.flash.position.set(200,300,100);
+    this.flash = new PointLight(0x062d89, 30, 500 , 1.7);
+    this.flash.position.set(200, 300, 100);
     this.scene.add(this.flash);
   }
 
@@ -120,16 +120,17 @@ export class RenderService implements OnDestroy {
 
   public render(): void {
     this.cloudParticles.forEach(p => {
-      p.rotation.z -=0.002;
+      p.rotation.z -= 0.002;
     });
 
-    if(Math.random() > 0.93 || this.flash.power > 100) {
-      if(this.flash.power < 100)
+    if (Math.random() > 0.93 || this.flash.power > 100) {
+      if (this.flash.power < 100) {
         this.flash.position.set(
           Math.random() * window.innerWidth - Math.random() * 600,
           window.innerHeight,
           Math.random() * window.innerHeight - Math.random() * 600
         );
+      }
       this.flash.power = 60 + Math.random() * 1000;
     }
 

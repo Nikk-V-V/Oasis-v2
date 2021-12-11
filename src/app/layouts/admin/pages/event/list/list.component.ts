@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Event} from '../../../../../shared/classes/event';
 import {EventService} from '../../../services/event.service';
-import {Subscription} from 'rxjs';
+import {Observable, Subscription} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
@@ -11,7 +11,7 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class ListComponent implements OnInit, OnDestroy {
 
-  events: Array<Event> = [];
+  events: Observable<Event[]>;
   sub: Subscription;
 
   type: string;
@@ -22,7 +22,7 @@ export class ListComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    this.route.data.subscribe(data => {
+    this.route.data.subscribe(() => {
       this.type = window.location.pathname.split('/')[2];
       this.get(this.type);
     });
@@ -33,9 +33,7 @@ export class ListComponent implements OnInit, OnDestroy {
   }
 
   get(type: string): void {
-    this.sub = this.event.getAll(type).subscribe(res => {
-      this.events = res;
-    });
+    this.events = this.event.getAll(type);
   }
 
   delete(event: Event): void {

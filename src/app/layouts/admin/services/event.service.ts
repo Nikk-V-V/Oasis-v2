@@ -3,7 +3,7 @@ import {Observable, Subject} from 'rxjs';
 import {AngularFireDatabase} from '@angular/fire/compat/database';
 import {AngularFireStorage} from '@angular/fire/compat/storage';
 import {AngularFirestore} from '@angular/fire/compat/firestore';
-import {Participants} from '../../../shared/classes/event';
+import {Event, Participants} from '../../../shared/classes/event';
 
 
 @Injectable({
@@ -38,8 +38,8 @@ export class EventService {
     return this.events;
   }
 
-  getById(id: string): Observable<any> {
-    return this.store.doc(`event/${id}`).valueChanges();
+  getById(id: string): Observable<Event> {
+    return this.store.doc<Event>(`event/${id}`).valueChanges();
   }
 
   delete(id: string, src: string): void {

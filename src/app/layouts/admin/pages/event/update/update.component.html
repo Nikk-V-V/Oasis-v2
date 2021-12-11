@@ -1,0 +1,133 @@
+<section *ngIf="form" class="create">
+  <form [formGroup]="form" class="top__content">
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem">
+      <div class="image item">
+        <img [src]="form.value.image" alt="">
+      </div>
+    </div>
+
+    <div class="text item">
+      <mat-form-field>
+        <mat-label>Назва</mat-label>
+        <input matInput formControlName="title">
+      </mat-form-field>
+      <div class="name">
+        {{form.value.title}}
+      </div>
+      <div class="texts">
+        <div class="mat-form-field-flex">
+          <mat-form-field>
+            <mat-label>Інформація</mat-label>
+            <textarea matInput></textarea>
+          </mat-form-field>
+          <button (click)="addInfo()" mat-icon-button>
+            <mat-icon>add</mat-icon>
+          </button>
+        </div>
+        <mat-accordion *ngIf="form.value.info && form.value.info.length">
+          <mat-expansion-panel *ngFor="let p of form.value.info; index as i" hideToggle>
+            <mat-expansion-panel-header>
+            </mat-expansion-panel-header>
+            <div class="mat-form-field-flex">
+              <mat-form-field color="primary">
+                <textarea
+                  class="par"
+                  matInput
+                  type="text"
+                  required
+                  autocomplete="off"
+                  [value]="p"
+                ></textarea>
+              </mat-form-field>
+              <button
+                (click)="red()"
+                mat-icon-button
+              >
+                <mat-icon class="mat-24">edit</mat-icon>
+              </button>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+
+        <div class="document">
+          <mat-form-field>
+            <mat-label>Посилання на документ</mat-label>
+            <input matInput formControlName="document">
+          </mat-form-field>
+        </div>
+        <div class="price">
+          <mat-form-field>
+            <mat-label>Ціна</mat-label>
+            <input matInput formControlName="price">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Амін збір</mat-label>
+            <input matInput formControlName="additionalPrice">
+          </mat-form-field>
+        </div>
+        <div class="date">
+          <mat-form-field appearance="outline">
+            <mat-label>Оазис відбуватиметься</mat-label>
+            <mat-date-range-input [rangePicker]="picker">
+              <input matStartDate formControlName="startDate" placeholder="Початок">
+              <input matEndDate formControlName="endDate" placeholder="Кінець">
+            </mat-date-range-input>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+          </mat-form-field>
+          <div style="gap: 2rem" class="mat-form-field-flex">
+            <mat-form-field
+              style="text-align: center"
+              appearance="outline"
+            >
+              <mat-label>Час початку</mat-label>
+              <input
+                formControlName="startTime"
+                matInput
+                type="time"
+              >
+            </mat-form-field>
+            <mat-form-field
+              style="text-align: center"
+              appearance="outline"
+            >
+              <mat-label>Час кінця</mat-label>
+              <input
+                formControlName="endTime"
+                matInput
+                type="time"
+              >
+            </mat-form-field>
+          </div>
+          <mat-form-field
+            style="text-align: center"
+            appearance="outline"
+          >
+            <mat-label>Важливо, до уваги і тд.</mat-label>
+            <input
+              formControlName="importantly"
+              matInput
+              type="text"
+            >
+          </mat-form-field>
+        </div>
+        <div class="it__will">
+          <p style="text-align: center">
+            Початок {{form.value.startDate | date: 'd MMMM'}} о {{form.value.startTime}}, завершення {{form?.value.endDate | date: 'd MMMM'}} о {{form.value.endTime}}.
+          </p>
+          <p>
+            {{form.value.importantly}}
+          </p>
+        </div>
+      </div>
+      <button
+        (click)="createEvent()"
+        [disabled]='!form?.valid'
+        class="going"
+      >
+        Оновити
+      </button>
+    </div>
+  </form>
+
+</section>
