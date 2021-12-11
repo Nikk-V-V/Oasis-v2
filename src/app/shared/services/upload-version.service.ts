@@ -10,7 +10,7 @@ export class UploadVersionService {
   constructor(private swUpdate: SwUpdate) {
     this.swUpdate.versionUpdates.pipe(
       map(() => {
-        this.swUpdate.activateUpdate().then(r => window.location.reload());
+        this.swUpdate.activateUpdate().then(() => window.location.reload());
       }),
     );
   }

@@ -36,8 +36,31 @@ $dark-theme: mat.define-dark-theme((
  * styles
  *****************************************************/
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+@font-face {
+  font-family: 'Roboto-Black';
+  src: local('/assets/fonts/Roboto-Black.ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto-Bold';
+  src: local('/assets/fonts/Roboto-Bold.ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto-Medium';
+  src: local('/assets/fonts/Roboto-Medium.ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto-Regular';
+  src: local('/assets/fonts/Roboto-Regular.ttf');
+  font-display: swap;
+}
 
 html, body {
   width: 100%;
@@ -118,7 +141,7 @@ img {
   0% {transform: translateZ(2000px);}
   100% {
     transform: translateZ(0);
-    background-image: url('../assets/images/img.jpg');
+    background-image: url('../assets/images/img.webp');
     background-position: center;
     background-attachment: fixed;
     background-size: cover;

@@ -59,9 +59,10 @@ export class RenderService implements OnDestroy {
 
     this.renderer = new WebGLRenderer({
       canvas: this.canvas,
-      alpha: true,    // transparent background
-      antialias: true // smooth edges
+      alpha: true,
+      antialias: true
     });
+
     this.scene.fog = new FogExp2(0x0000, 0.002);
     this.renderer.setClearColor(this.scene.fog.color);
     this.renderer.setSize(window.innerWidth, window.innerHeight);
@@ -91,7 +92,7 @@ export class RenderService implements OnDestroy {
     });
 
     const background = new TextureLoader();
-    background.load('assets/textures/fon3.jpg', (texture => {
+    background.load('assets/textures/fon3.webp', (texture => {
       this.scene.background = texture;
     }));
 

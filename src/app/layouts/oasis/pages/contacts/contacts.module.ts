@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 import {ContactsPage} from './contacts.page';
 import {RouterModule, Routes} from '@angular/router';
 import {SharedModule} from '../../../../shared/shared.module';
-import {MatButtonModule} from "@angular/material/button";
+import {MatButtonModule} from '@angular/material/button';
 
-const routes: Routes = [{path: '', component: ContactsPage}]
+const routes: Routes = [{path: '', component: ContactsPage}];
 
 @NgModule({
   declarations: [ContactsPage],

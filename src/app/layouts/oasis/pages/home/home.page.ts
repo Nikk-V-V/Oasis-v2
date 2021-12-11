@@ -44,6 +44,7 @@ export class HomePage implements  OnInit, OnDestroy{
   }
 
   ngOnDestroy() {
+    this.topContent.ngOnDestroy();
   }
 
   getEvents(type: string): void {
