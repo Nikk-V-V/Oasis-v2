@@ -11,8 +11,6 @@
   overflow: hidden;
   height: 100%;
   width: 100%;
-  transition: 2s ease-in-out;
-  animation: shadow 4s ease-in-out forwards;
 }
 
 .button-wrapper {
@@ -67,11 +65,11 @@
   }
 }
 
-@keyframes shadow {
-  0% {
-    box-shadow: inset 0 0 110px 400px black;
-  }
-  100% {
-    box-shadow: inset 0 0 110px 0 black;
-  }
-}
+//@keyframes shadow {
+//  0% {
+//    box-shadow: inset 0 0 110px 400px black;
+//  }
+//  100% {
+//    box-shadow: inset 0 0 110px 0 black;
+//  }
+//}

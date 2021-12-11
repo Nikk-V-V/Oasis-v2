@@ -1,8 +1,8 @@
 <section
   class="menu"
 >
-  <div [class.load]="load" class="menu-container" >
-    <div class="top-menu-buttons button-wrapper">
+  <div [@light]="state" class="menu-container" >
+    <div [@top-buttons]="state" class="top-menu-buttons button-wrapper">
       <div
         [routerLink]="[path, 'about']"
         class="button btn-grad"
@@ -22,7 +22,7 @@
         Галерея
       </div>
     </div>
-    <div class="bot-menu-buttons button-wrapper">
+    <div [@bottom-buttons]="state" class="bot-menu-buttons button-wrapper">
       <div
         [routerLink]="[path, 'home']"
         class="button btn-grad"
