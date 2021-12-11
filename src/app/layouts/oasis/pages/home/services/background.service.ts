@@ -18,7 +18,7 @@ export class BackgroundService {
   private camera: PerspectiveCamera;
   private scene: Scene;
   private particlesGeometry: BufferGeometry;
-  private particleCount = 1500;
+  private particleCount = 500;
   private particleMaterial: PointsMaterial;
   private pointLight: PointLight;
 
@@ -58,13 +58,13 @@ export class BackgroundService {
     this.renderer.setClearColor(this.scene.fog.color);
 
 
-    this.pointLight = new PointLight(0xffffff, 0.002);
+    this.pointLight = new PointLight(0xffffff, 0.1);
     this.pointLight.position.x = 2;
     this.pointLight.position.y = 3;
     this.pointLight.position.z = 4;
     this.scene.add(this.pointLight);
 
-    this.scene.fog = new FogExp2(0x0000, 0.5);
+    this.scene.fog = new FogExp2(0x0000, 0.2);
     this.scene.background = new TextureLoader().load('assets/images/background2.webp');
 
     const star = new TextureLoader().load('assets/textures/star.webp');
