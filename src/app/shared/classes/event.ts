@@ -14,6 +14,7 @@ export interface Event {
   startTime: string;
   endTime: string;
   importantly: string;
+  contactsForLiaison?: string;
 }
 
 
