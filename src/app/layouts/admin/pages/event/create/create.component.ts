@@ -43,7 +43,8 @@ export class CreateComponent implements OnInit {
         image: new FormControl(this.url, [Validators.required]),
         startTime: new FormControl('', [Validators.required]),
         endTime: new FormControl('', [Validators.required]),
-        importantly: new FormControl('', [Validators.required])
+        importantly: new FormControl('', [Validators.required]),
+        anotherPriceString: new FormControl('')
       });
     });
   }

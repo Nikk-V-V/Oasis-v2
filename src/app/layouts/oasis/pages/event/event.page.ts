@@ -13,6 +13,7 @@ export class EventPage implements  OnInit{
 
   eventId: string;
   event: Event;
+  type: string;
 
   constructor(
     private router: ActivatedRoute,
@@ -27,6 +28,7 @@ export class EventPage implements  OnInit{
 
   get(): void {
     this.router.params.subscribe(res => {
+      this.type = window.location.pathname.split('/')[2];
       this.eventId = res.id;
       this.eventService.getById(res.id)
         .subscribe((event: Event) => {
@@ -39,7 +41,8 @@ export class EventPage implements  OnInit{
     this.dialog.open(GoToComponent, {
       panelClass: 'reg-to-event',
       data: {
-        eventId: this.eventId
+        eventId: this.eventId,
+        type: this.type
       }
     });
   }

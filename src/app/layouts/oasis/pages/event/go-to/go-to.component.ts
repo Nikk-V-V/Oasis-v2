@@ -37,11 +37,12 @@ export class GoToComponent implements OnInit {
       isViber: new FormControl(false),
       isWhatsApp: new FormControl(false),
       parentPhone: new FormControl(null, [Validators.required, Validators.pattern(/^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/)]),
-      itWasJun: new FormControl(false, [Validators.required]),
-      itWasChild: new FormControl(false, [Validators.required]),
+      itWasJun: new FormControl(false),
+      itWasChild: new FormControl(false),
       iBelong: new FormControl('', [Validators.required]),
       notes: new FormControl(''),
       email: new FormControl(null, [Validators.required, Validators.pattern(/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/)]),
+      youConfess: new FormControl('')
     });
   }
 

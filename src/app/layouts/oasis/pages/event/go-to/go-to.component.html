@@ -147,7 +147,7 @@
             <mat-radio-button value="false">Ні, не бував(ла)</mat-radio-button>
           </mat-radio-group>
         </div>
-        <div class="itWasJun">
+        <div *ngIf="data.type === 'jun'" class="itWasJun">
           <mat-label>Бував(ла) на молодіжному Оазисі?</mat-label>
           <mat-radio-group formControlName="itWasJun" class="radios" aria-label="Обери варіант">
             <mat-radio-button value="true">Так, бував(ла)</mat-radio-button>
@@ -179,6 +179,15 @@
           </mat-form-field>
 
         </div>
+      </div>
+      <div *ngIf="data.type === 'child'" class="input-cont">
+        <mat-form-field appearance="fill">
+          <mat-label>Сповідаєшся?</mat-label>
+          <input
+            matInput
+            formControlName="youConfess"
+          >
+        </mat-form-field>
       </div>
       <div class="notes input-cont">
         <mat-form-field appearance="fill">

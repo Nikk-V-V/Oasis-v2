@@ -15,6 +15,7 @@ export interface Event {
   endTime: string;
   importantly: string;
   contactsForLiaison?: string;
+  anotherPriceString?: string;
 }
 
 
