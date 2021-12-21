@@ -23,7 +23,7 @@ export class GoToComponent implements OnInit {
       name: new FormControl('', [Validators.required, Validators.minLength(3)]),
       surname: new FormControl('', [Validators.required, Validators.minLength(3)]),
       birthday: new FormControl('', Validators.required),
-      age: new FormControl(null, [Validators.required, Validators.max(18)]),
+      age: new FormControl(null, [Validators.required, Validators.max(this.data.type === 'jun' ? 18 : 13), Validators.min(this.data.type === 'jun' ? 12 : 7)]),
       sex: new FormControl('', [Validators.required]),
       city: new FormControl('', [Validators.required]),
       phone: new FormControl(
