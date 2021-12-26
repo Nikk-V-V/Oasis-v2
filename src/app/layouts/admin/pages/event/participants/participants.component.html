@@ -52,9 +52,15 @@
             mat-cell
             *matCellDef="let row"
           >
-            <span *ngIf="row.itWasJun === 'Ні'">0 - Вперше</span>
-            <span *ngIf="row.age < 15 && row.itWasJun !== 'Ні'">1 - Молодша група</span>
-            <span *ngIf="row.age >= 15 && row.itWasJun !== 'Ні'">2 - Старша група</span>
+            <div *ngIf="type === 'jun'">
+              <span *ngIf="row.age < 15 && row.itWasJun">1 - Молодша група</span>
+              <span *ngIf="row.age >= 15 && row.itWasJun">2 - Старша група</span>
+              <span *ngIf="!row.itWasJun">0 - Вперше</span>
+            </div>
+            <div *ngIf="type === 'child'">
+              <span *ngIf="row.itWasChild === 'true'">1 - Вже був(ла)</span>
+              <span *ngIf="row.itWasChild === 'false'">0 - Вперше</span>
+            </div>
           </td>
         </ng-container>
 

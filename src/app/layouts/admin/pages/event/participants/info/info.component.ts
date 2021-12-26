@@ -9,6 +9,8 @@ import {Participants} from '../../../../../../shared/classes/event';
 })
 export class InfoComponent implements OnInit {
 
+  type: string;
+
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: Participants,
   ) {
@@ -16,5 +18,6 @@ export class InfoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.type = window.location.pathname.split('/')[2];
   }
 }

@@ -78,10 +78,6 @@ export class ParticipantsDatasource extends DataSource<Participants> {
       }
     });
   }
-
-  search(el) {
-    console.log(el);
-  }
 }
 
 /** Simple sort comparator for example ID/Name columns (for client-side sorting). */

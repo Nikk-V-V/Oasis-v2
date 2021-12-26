@@ -38,7 +38,7 @@ export interface Participants {
   isWhatsApp: boolean;
   parentPhone: number;
   itWasJun: boolean;
-  itWasChild: boolean;
+  itWasChild: string;
   iBelong: string;
   notes: string;
   id?: string;

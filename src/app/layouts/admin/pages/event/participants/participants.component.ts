@@ -48,7 +48,10 @@ export class ParticipantsComponent implements OnInit, AfterViewInit {
 
   searchResult: Participants[] = [];
 
+  type: string;
+
   ngOnInit(): void {
+    this.type = window.location.pathname.split('/')[2];
     this.form = new FormGroup({
       search: new FormControl('')
     });
@@ -80,7 +83,6 @@ export class ParticipantsComponent implements OnInit, AfterViewInit {
     this.dataSource.participants = participants;
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
-    this.dataSource.search = this.search;
     this.table.dataSource = this.dataSource;
   }
 
@@ -94,16 +96,15 @@ export class ParticipantsComponent implements OnInit, AfterViewInit {
     this.eventService.removeParticipants(id);
   }
 
-  search(): void {
-  }
-
   exportData() {
-    const keys = ['name', 'surname', 'birthday', 'age', 'sex', 'city', 'phone', 'parentPhone', 'email', 'notes'];
+    const keys = ['name', 'surname', 'birthday', 'age', 'sex', 'city', 'phone', 'parentPhone', 'email', 'notes', `${this.type === 'jun' ? 'itWasJun' : 'itWasChild'}`];
     const data: string[][] = [
-      ['Ім`я', 'Прізвище', 'Дата народження', 'Вік', 'Стать', 'Місто', 'Номер учасника', 'Номер батьків', 'Електронна адреса', 'Нотатки']
+      ['Ім`я', 'Прізвище', 'Дата народження', 'Вік', 'Стать', 'Місто', 'Номер учасника', 'Номер батьків', 'Електронна адреса', 'Нотатки', 'Був(ла) на оазисі?']
     ];
     this.participants.forEach((part) => {
-      data.push(keys.map((el) => part[(el as string)]));
+      data.push(keys.map((el) => el === ('itWasJun' || 'itWaChild')
+        ? `${part[(el as string)]}` === 'true'  ? 'Так' : 'Ні'
+        : part[(el as string)]));
     });
     const csvContent = 'data:text/csv;charset=utf-8,' + data.map(el => el.join(',')).join('\n');
     const encodedUri = encodeURI(csvContent);
