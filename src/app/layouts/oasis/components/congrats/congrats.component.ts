@@ -8,16 +8,9 @@ import {MatDialogRef} from '@angular/material/dialog';
 })
 export class CongratsComponent implements OnInit {
 
-  elements = Array(400);
-
   constructor(
     public dialogRef: MatDialogRef<CongratsComponent>,
   ) { }
 
-  ngOnInit(): void {
-  }
-
-  delay(index: number) {
-    return `${index * 0.05}s`;
-  }
+  ngOnInit(): void {}
 }

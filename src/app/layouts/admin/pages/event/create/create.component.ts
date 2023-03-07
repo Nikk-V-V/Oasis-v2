@@ -28,7 +28,7 @@ export class CreateComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.route.data.subscribe(data => {
+    this.route.data.subscribe(() => {
       this.type = window.location.pathname.split('/')[2];
       this.form = new FormGroup({
         title: new FormControl('', [Validators.required, Validators.minLength(3)]),

@@ -6,7 +6,9 @@ import {SharedModule} from '../../../../shared/shared.module';
 import {MAT_DATE_LOCALE} from '@angular/material/core';
 
 
-const routes: Routes = [{path: '', component: GalleryPage}];
+const routes: Routes = [{path: '', component: GalleryPage, children: [
+  {path: 'photo', loadChildren: () => import('./photo/photo.module').then(m => m.PhotoModule), data: {type: 'child'}},
+  ]}];
 
 @NgModule({
   declarations: [GalleryPage],

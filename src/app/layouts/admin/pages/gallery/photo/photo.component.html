@@ -1,3 +1,19 @@
-<section class="list">
-
+<section class="tiles">
+  <div
+    class="tiles-container"
+  >
+    <div
+      *ngFor="let photo of photos, let i = index"
+      class="tile"
+    >
+      <img [src]="photo.tile.src" alt="tile">
+    </div>
+  </div>
+  <button
+    class="add-event"
+    mat-icon-button
+    (click)="addPhoto()"
+  >
+    <mat-icon>add</mat-icon>
+  </button>
 </section>

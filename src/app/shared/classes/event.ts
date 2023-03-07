@@ -37,7 +37,7 @@ export interface Participants {
   isViber: boolean;
   isWhatsApp: boolean;
   parentPhone: number;
-  itWasJun: boolean;
+  itWasJun: string;
   itWasChild: string;
   iBelong: string;
   notes: string;

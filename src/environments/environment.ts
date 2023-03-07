@@ -7,12 +7,12 @@ export const environment = {
   production: false,
   version: require('../../package.json').version,
   firebase:  {
-    apiKey: 'AIzaSyBX4g84u7rTQQP_lpJ7jlZttvsSjm48Cmk',
-    authDomain: 'stage-oasa.firebaseapp.com',
-    projectId: 'stage-oasa',
-    storageBucket: 'stage-oasa.appspot.com',
-    messagingSenderId: '237920509237',
-    appId: '1:237920509237:web:b3af64a73e5ef8e182407c',
-    measurementId: 'G-VPML65VJ6V'
+    apiKey: 'AIzaSyAxqtfb6kO6EEwuls-rqzwjnJghHjzTkWA',
+    authDomain: 'oasa-f33c4.firebaseapp.com',
+    projectId: 'oasa-f33c4',
+    storageBucket: 'oasa-f33c4.appspot.com',
+    messagingSenderId: '390179268074',
+    appId: '1:390179268074:web:26fbcf732f3f4f1cdffe93',
+    measurementId: 'G-8GSRRSE3F7'
   }
 };

@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {ViewPhotoComponent} from '../components/view-photo/view-photo.component';
 import {Photo} from '../../../../../shared/classes/gallery';
@@ -10,15 +10,6 @@ import {GalleryService} from '../../../services/gallery.service';
   styleUrls: ['./tiles.page.scss']
 })
 export class TilesPage implements OnInit {
-
-  @ViewChild('one', {static: true})
-  public one: ElementRef<HTMLDivElement>;
-
-  @ViewChild('second', {static: true})
-  public second: ElementRef<HTMLDivElement>;
-
-  departure = false;
-
   photos: Photo[];
 
   constructor(
@@ -29,38 +20,10 @@ export class TilesPage implements OnInit {
 
   ngOnInit(): void {
     this.getTiles();
-    setTimeout(() => {
-      this.departure = true;
-    }, 15000);
     this.getPhoto();
   }
 
   getTiles(): void {
-    for (let i = 1; i < 500; i++) {
-      const duration = `animation-duration:${this.getDuration}`;
-      const delay = `animation-delay:${this.getDelay}`;
-      if (i < 250) {
-        this.one
-          .nativeElement
-          .innerHTML += `
-            <div
-                style="${duration}; ${delay}"
-                class="block"
-            >
-            </div>
-          `;
-      } else {
-        this.second
-            .nativeElement
-            .innerHTML += `
-              <div
-                  style="${duration}; ${delay}"
-                  class="block"
-              >
-              </div>
-            `;
-      }
-    }
   }
 
   getPhoto() {
@@ -84,10 +47,16 @@ export class TilesPage implements OnInit {
   }
 
   get getDuration(): string {
-    return `${2 * (Math.random() * 7)}s`;
+    return `${(Math.random() * 5)}s`;
   }
 
   get getDelay(): string {
     return `${Math.random() * 7}s`;
+  }
+
+  get getStyles() {
+    return {
+      animationDuration: `${this.getDuration}`,
+    };
   }
 }

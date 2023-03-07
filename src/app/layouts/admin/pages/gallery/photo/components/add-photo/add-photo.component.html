@@ -1,0 +1,19 @@
+<mat-dialog-content>
+  <div *ngIf="!img" class="image item">
+    <img (click)="file.click()" src="assets/images/vga.webp" alt="">
+  </div>
+  <input (change)="loadImg($event)" type="file" #file style="display:none;">
+  <div *ngIf="img" (click)="file.click()" class="image item">
+    <img [src]="img" alt="">
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button
+    color="accent"
+    mat-raised-button
+  >
+    Завантажити
+  </button>
+</mat-dialog-actions>
+
