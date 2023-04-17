@@ -55,6 +55,10 @@ export class EventService {
     this.store.doc(`event/${id}`).update({statusReg: status}).then();
   }
 
+  showHidde(id: string, show: boolean): void {
+    this.store.doc(`event/${id}`).update({show: !show}).then();
+  }
+
   getParticipants(eventId: string): Observable<any> {
     const collection = this.store.collection('regToEvent', ref => ref.where('event', '==', eventId)).snapshotChanges();
     collection.subscribe((res: any) => {

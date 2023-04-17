@@ -17,7 +17,10 @@ export class EventService {
 
   get(type: string): Observable<any> {
     return this.store
-      .collection('event', ref => ref.where('type', '==', type))
+      .collection(
+        'event',
+        (ref) => ref.where('type', '==', type).where('show', '==', true)
+      )
       .snapshotChanges()
       .pipe(
         map((dates) => {

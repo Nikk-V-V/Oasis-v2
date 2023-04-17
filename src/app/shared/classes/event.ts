@@ -16,6 +16,7 @@ export interface Event {
   importantly: string;
   contactsForLiaison?: string;
   anotherPriceString?: string;
+  show: boolean;
 }
 
 
