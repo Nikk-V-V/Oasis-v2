@@ -43,4 +43,8 @@ export class ListComponent implements OnInit, OnDestroy {
   updateStatus(event: Event, status: string): void {
     this.event.updateStatus(event.id, status);
   }
+
+  showHidde(event: Event): void {
+    this.event.showHidde(event.id, event.show);
+  }
 }

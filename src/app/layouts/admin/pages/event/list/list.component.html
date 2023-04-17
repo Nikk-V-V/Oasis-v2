@@ -30,6 +30,11 @@
           mat-raised-button
           (click)="updateStatus(event, event.statusReg === 'Active' ? 'Stop' : 'Active')"
         >Зупинити/продовжити реєстрацію</button>
+        <button
+          color="primary"
+          mat-raised-button
+          (click)="showHidde(event)"
+        >{{event.show ? "Приховати" : "Показати"}}</button>
       </div>
     </mat-expansion-panel>
   </mat-accordion>
