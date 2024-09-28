@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
 import {AngularFireStorage} from '@angular/fire/compat/storage';
 import {ActivatedRoute, Router} from '@angular/router';
 import {EventService} from '../../../services/event.service';
@@ -12,7 +12,7 @@ import {EventService} from '../../../services/event.service';
 })
 export class UpdateComponent implements OnInit {
 
-  form: FormGroup;
+  form: UntypedFormGroup;
   file: File;
   eventId: string;
 
@@ -35,18 +35,18 @@ export class UpdateComponent implements OnInit {
       this.eventService
         .getById(params.id)
         .subscribe((event) => {
-          this.form = new FormGroup({
-            title: new FormControl(event.title, [Validators.required, Validators.minLength(3)]),
-            info: new FormControl([...event.info]),
-            price: new FormControl(event.price, [Validators.required]),
-            additionalPrice: new FormControl(event.additionalPrice, [Validators.required]),
-            startDate: new FormControl(event.startDate, [Validators.required]),
-            endDate: new FormControl(event.endDate, [Validators.required]),
-            document: new FormControl(event.document, [Validators.required]),
-            image: new FormControl(event.image, [Validators.required]),
-            startTime: new FormControl(event.startTime, [Validators.required]),
-            endTime: new FormControl(event.endTime, [Validators.required]),
-            importantly: new FormControl(event.importantly, [Validators.required])
+          this.form = new UntypedFormGroup({
+            title: new UntypedFormControl(event.title, [Validators.required, Validators.minLength(3)]),
+            info: new UntypedFormControl([...event.info]),
+            price: new UntypedFormControl(event.price, [Validators.required]),
+            additionalPrice: new UntypedFormControl(event.additionalPrice, [Validators.required]),
+            startDate: new UntypedFormControl(event.startDate, [Validators.required]),
+            endDate: new UntypedFormControl(event.endDate, [Validators.required]),
+            document: new UntypedFormControl(event.document, [Validators.required]),
+            image: new UntypedFormControl(event.image, [Validators.required]),
+            startTime: new UntypedFormControl(event.startTime, [Validators.required]),
+            endTime: new UntypedFormControl(event.endTime, [Validators.required]),
+            importantly: new UntypedFormControl(event.importantly, [Validators.required])
           });
           console.log(this.form);
         });

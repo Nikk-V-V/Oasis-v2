@@ -46,5 +46,6 @@ Thumbs.db
 
 # Project specific
 package-lock.json
+bun.lockb
 
 .vercel

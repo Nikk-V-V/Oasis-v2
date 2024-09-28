@@ -135,7 +135,6 @@
       }
     }
   },
-  "defaultProject": "oasis",
   "cli": {
     "analytics": "58212eb1-d08c-4e42-a8dd-b0fc0d26b8d1"
   }

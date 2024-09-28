@@ -9,7 +9,7 @@ import {ParticipantsDatasource} from './participants.datasource';
 import {AngularFireStorage} from '@angular/fire/compat/storage';
 import {MatDialog} from '@angular/material/dialog';
 import {InfoComponent} from './info/info.component';
-import {FormControl, FormGroup} from '@angular/forms';
+import {UntypedFormControl, UntypedFormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-events',
@@ -44,7 +44,7 @@ export class ParticipantsComponent implements OnInit, AfterViewInit {
 
   uid = JSON.parse(localStorage.getItem('uid') as string);
 
-  form: FormGroup;
+  form: UntypedFormGroup;
 
   searchResult: Participants[] = [];
 
@@ -52,8 +52,8 @@ export class ParticipantsComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.type = window.location.pathname.split('/')[2];
-    this.form = new FormGroup({
-      search: new FormControl('')
+    this.form = new UntypedFormGroup({
+      search: new UntypedFormControl('')
     });
     this.form.get('search').valueChanges.subscribe((change) => {
       const filtered = this.participants.filter(el => (

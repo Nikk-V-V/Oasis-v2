@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
 import {finalize} from 'rxjs';
 import {AngularFireStorage} from '@angular/fire/compat/storage';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -13,7 +13,7 @@ import {EventService} from '../../../services/event.service';
 export class CreateComponent implements OnInit {
 
   type: string;
-  form: FormGroup;
+  form: UntypedFormGroup;
   file: File;
   paragraphs: string[] = [];
   url = '';
@@ -30,21 +30,21 @@ export class CreateComponent implements OnInit {
   ngOnInit(): void {
     this.route.data.subscribe(() => {
       this.type = window.location.pathname.split('/')[2];
-      this.form = new FormGroup({
-        title: new FormControl('', [Validators.required, Validators.minLength(3)]),
-        info: new FormControl(this.paragraphs),
-        price: new FormControl(700, [Validators.required]),
-        additionalPrice: new FormControl(300, [Validators.required]),
-        startDate: new FormControl('', [Validators.required]),
-        endDate: new FormControl('', [Validators.required]),
-        statusReg: new FormControl('Active'),
-        type: new FormControl(this.type),
-        document: new FormControl('', [Validators.required]),
-        image: new FormControl(this.url, [Validators.required]),
-        startTime: new FormControl('', [Validators.required]),
-        endTime: new FormControl('', [Validators.required]),
-        importantly: new FormControl('', [Validators.required]),
-        anotherPriceString: new FormControl('')
+      this.form = new UntypedFormGroup({
+        title: new UntypedFormControl('', [Validators.required, Validators.minLength(3)]),
+        info: new UntypedFormControl(this.paragraphs),
+        price: new UntypedFormControl(700, [Validators.required]),
+        additionalPrice: new UntypedFormControl(300, [Validators.required]),
+        startDate: new UntypedFormControl('', [Validators.required]),
+        endDate: new UntypedFormControl('', [Validators.required]),
+        statusReg: new UntypedFormControl('Active'),
+        type: new UntypedFormControl(this.type),
+        document: new UntypedFormControl('', [Validators.required]),
+        image: new UntypedFormControl(this.url, [Validators.required]),
+        startTime: new UntypedFormControl('', [Validators.required]),
+        endTime: new UntypedFormControl('', [Validators.required]),
+        importantly: new UntypedFormControl('', [Validators.required]),
+        anotherPriceString: new UntypedFormControl('')
       });
     });
   }
