@@ -1,6 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
 import {EventService} from '../../../services/event.service';
 
 @Component({
@@ -10,7 +10,7 @@ import {EventService} from '../../../services/event.service';
 })
 export class GoToComponent implements OnInit {
 
-  form: FormGroup;
+  form: UntypedFormGroup;
 
   constructor(
     public dialogRef: MatDialogRef<GoToComponent>,
@@ -19,30 +19,31 @@ export class GoToComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.form = new FormGroup({
-      name: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      surname: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      birthday: new FormControl('', Validators.required),
-      age: new FormControl(null, [Validators.required, Validators.max(this.data.type === 'jun' ? 18 : 13), Validators.min(this.data.type === 'jun' ? 12 : 7)]),
-      sex: new FormControl('', [Validators.required]),
-      city: new FormControl('', [Validators.required]),
-      phone: new FormControl(
+    this.form = new UntypedFormGroup({
+      name: new UntypedFormControl('', [Validators.required, Validators.minLength(3)]),
+      surname: new UntypedFormControl('', [Validators.required, Validators.minLength(3)]),
+      birthday: new UntypedFormControl('', Validators.required),
+      // tslint:disable-next-line:max-line-length
+      age: new UntypedFormControl(null, [Validators.required, Validators.max(this.data.type === 'jun' ? 18 : 13), Validators.min(this.data.type === 'jun' ? 12 : 7)]),
+      sex: new UntypedFormControl('', [Validators.required]),
+      city: new UntypedFormControl('', [Validators.required]),
+      phone: new UntypedFormControl(
         null,
         [
           Validators.required,
           Validators.pattern(/^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/)
         ]
       ),
-      isTelegram: new FormControl(false),
-      isViber: new FormControl(false),
-      isWhatsApp: new FormControl(false),
-      parentPhone: new FormControl(null, [Validators.required, Validators.pattern(/^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/)]),
-      itWasJun: new FormControl(false),
-      itWasChild: new FormControl(false),
-      iBelong: new FormControl('', [Validators.required]),
-      notes: new FormControl(''),
-      email: new FormControl(null, [Validators.required, Validators.pattern(/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/)]),
-      youConfess: new FormControl('')
+      isTelegram: new UntypedFormControl(false),
+      isViber: new UntypedFormControl(false),
+      isWhatsApp: new UntypedFormControl(false),
+      parentPhone: new UntypedFormControl(null, [Validators.required, Validators.pattern(/^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/)]),
+      itWasJun: new UntypedFormControl(false),
+      itWasChild: new UntypedFormControl(false),
+      iBelong: new UntypedFormControl('', [Validators.required]),
+      notes: new UntypedFormControl(''),
+      email: new UntypedFormControl(null, [Validators.required, Validators.pattern(/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/)]),
+      youConfess: new UntypedFormControl('')
     });
   }
 
