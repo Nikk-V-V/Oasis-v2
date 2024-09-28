@@ -27,6 +27,7 @@
         </div>
         <div class="price">
           Пожертва: {{event.price}}
+          <span *ngIf="event.additionalPrice">адмін збір {{event.additionalPrice}}</span>.
           {{event?.contactsForLiaison}}
         </div>
         <div class="another_price_string">
