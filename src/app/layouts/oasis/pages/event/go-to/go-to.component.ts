@@ -23,8 +23,7 @@ export class GoToComponent implements OnInit {
       name: new UntypedFormControl('', [Validators.required, Validators.minLength(3)]),
       surname: new UntypedFormControl('', [Validators.required, Validators.minLength(3)]),
       birthday: new UntypedFormControl('', Validators.required),
-      // tslint:disable-next-line:max-line-length
-      age: new UntypedFormControl(null, [Validators.required, Validators.max(this.data.type === 'jun' ? 18 : 13), Validators.min(this.data.type === 'jun' ? 12 : 7)]),
+      age: new UntypedFormControl(null, [Validators.required]),
       sex: new UntypedFormControl('', [Validators.required]),
       city: new UntypedFormControl('', [Validators.required]),
       phone: new UntypedFormControl(
